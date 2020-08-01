@@ -25,7 +25,7 @@
         ]
     },
     "type": "module",
-    "author": "ryanspoone",
+    "author": "Ryan Spoone",
     "license": "UNLICENSED",
     "dependencies": {
         "babel-cli": "^6.26.0",

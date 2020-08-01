@@ -1,5 +1,5 @@
 {
-    "name": "fullstack-template-frontend",
+    "name": "@ryanspoone/ryanspoone.com-frontend",
     "version": "0.1.0",
     "private": true,
     "proxy": "http://localhost:1050/",

@@ -1,4 +1,4 @@
-# fullstack-template
+# ryanspoone.com
 
 ## Getting Started Locally
 
@@ -38,8 +38,8 @@ Clone this repo:
 
 ```bash
 cd ~
-git clone https://github.com/ryanspoone/fullstack-template.git
-cd fullstack-template/
+git clone https://github.com/ryanspoone/ryanspoone.com.git
+cd ryanspoone.com/
 npm run install-all
 ```
 
@@ -80,7 +80,7 @@ sudo nginx -t
 sudo chmod -R 755 ~
 
 # Create a symlink to where nginx is expecting code to be
-sudo ln -s  ~/fullstack-template/client/build/* /var/www/html/
+sudo ln -s  ~/ryanspoone.com/client/build/* /var/www/html/
 
 # Reload nginx to get all changes to take effect
 sudo service nginx reload
@@ -92,7 +92,7 @@ Update to the latest code:
 
 ```bash
 # Get the latest code
-cd ~/fullstack-template
+cd ~/ryanspoone.com
 git pull
 
 # If client (frontend) changes

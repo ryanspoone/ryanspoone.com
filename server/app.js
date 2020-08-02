@@ -18,70 +18,14 @@ app.use((req, res, next) => {
 
 const indexRouter = express.Router();
 indexRouter.get('/', (req, res) => {
-    res.send('FullStack Template');
+    res.send("Ryan Spoone's API");
 });
 
-// A fake API token our server validates
-export const API_TOKEN = 'D6W69PRgCoDKgHZGJmRUNA';
+import githubRoutes from './routes/github';
+import linkedinRoutes from './routes/linkedin';
 
-const extractToken = req => req.query.token;
-
-const authenticatedRoute = (req, res, next) => {
-    const token = extractToken(req);
-
-    if (token) {
-        if (token === API_TOKEN) {
-            return next();
-        } else {
-            return res.status(403).json({
-                success: false,
-                error: 'Invalid token provided'
-            });
-        }
-    } else {
-        return res.status(403).json({
-            success: false,
-            error: 'No token provided. Supply token as query param `token`'
-        });
-    }
-};
-
-indexRouter.get('/check_token', (req, res) => {
-    const token = extractToken(req);
-
-    if (token) {
-        if (token === API_TOKEN) {
-            return res.json({ valid: true });
-        } else {
-            return res.json({ valid: false });
-        }
-    } else {
-        return res.status(400).json({
-            valid: false,
-            error: 'No token found in `Authorization` header'
-        });
-    }
-});
-
-// Make things more noticeable in the UI by introducing a fake delay
-// to logins
-const FAKE_DELAY = 500; // ms
-indexRouter.post('/login', (req, res) => {
-    setTimeout(
-        () =>
-            res.json({
-                success: true,
-                token: API_TOKEN
-            }),
-        FAKE_DELAY
-    );
-});
-
-import unprotectedRoutes from './routes/unprotected';
-import protectedRoutes from './routes/protected';
-
-indexRouter.use('/unprotected', unprotectedRoutes);
-indexRouter.use('/protected', authenticatedRoute, protectedRoutes);
+indexRouter.use('/github', githubRoutes);
+indexRouter.use('/linkedin', linkedinRoutes);
 
 app.use(process.env.SERVER_ROUTE, indexRouter);
 

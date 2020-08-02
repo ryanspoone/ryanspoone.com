@@ -1,0 +1,38 @@
+{
+    "three-current-positions": [
+        {
+            "title": "Senior Software Engineer",
+            "summary": "",
+            "start-date": "2019",
+            "end-date": null,
+            "is-current": true,
+            "company": "InsightSquared"
+        }
+    ],
+    "three-past-positions": [
+        {
+            "title": "Senior Software Engineer",
+            "summary": "",
+            "start-date": "2018",
+            "end-date": "2019",
+            "is-current": false,
+            "company": "Olono (acquired by InsightSquared)"
+        },
+        {
+            "title": "Software Engineer",
+            "summary": "",
+            "start-date": "2016",
+            "end-date": "2017",
+            "is-current": false,
+            "company": "Intel Corporation"
+        },
+        {
+            "title": "Performance Engineer",
+            "summary": "",
+            "start-date": "2014",
+            "end-date": "2016",
+            "is-current": false,
+            "company": "Intel Corporation"
+        }
+    ]
+}

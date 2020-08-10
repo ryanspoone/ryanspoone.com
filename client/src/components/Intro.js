@@ -11,10 +11,10 @@ export default class Github extends Component {
     render() {
         return (
             <section id="intro" className="intro">
-                <h1>Hi, my name is</h1>
-                <h2>Ryan Spoone.</h2>
-                <h3>I love to build cool things.</h3>
-                <div>
+                <h1 className="overline">Hi, my name is</h1>
+                <h2 className="title">Ryan Spoone.</h2>
+                <h3 className="subtitle">I love to build cool things.</h3>
+                <div className="description">
                     <p>
                         I&apos;m a software engineer based in Austin, TX specializing in designing and
                         building exceptional applications, websites, and everything in-between.

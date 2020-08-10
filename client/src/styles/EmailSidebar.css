@@ -1,0 +1,54 @@
+.email {
+    width: 40px;
+    position: fixed;
+    bottom: 0px;
+    left: auto;
+    right: 40px;
+    z-index: 10;
+    color: rgb(168, 178, 209);
+}
+
+.email-item {
+    display: flex;
+    flex-direction: column;
+    -webkit-box-align: center;
+    align-items: center;
+    position: relative;
+}
+
+.email-item::after {
+    content: '';
+    display: block;
+    width: 1px;
+    height: 90px;
+    background-color: rgb(168, 178, 209);
+    margin: 0px auto;
+}
+
+.email-item a {
+    font-family: 'SF Mono', 'Fira Code', 'Fira Mono', 'Roboto Mono', 'Lucida Console', Monaco, monospace;
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    -webkit-writing-mode: vertical-rl;
+    writing-mode: vertical-rl;
+    margin: 20px auto;
+    padding: 10px;
+}
+
+.email-item a:hover,
+.email-item a:focus {
+    text-decoration: none;
+    transform: translateY(-3px);
+}
+
+@media (max-width: 62.5em) {
+    .email {
+        right: 25px;
+    }
+}
+
+@media (max-width: 48em) {
+    .email {
+        display: none;
+    }
+}

@@ -1,0 +1,73 @@
+.intro {
+    max-width: 1000px;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    flex-direction: column;
+    align-items: flex-start;
+    min-height: 100vh;
+    margin: 0px auto;
+    padding: 0px;
+}
+
+.intro > h1 {
+    color: rgb(100, 255, 218);
+    font-size: 16px;
+    font-family: 'SF Mono', 'Fira Code', 'Fira Mono', 'Roboto Mono', 'Lucida Console', Monaco, monospace;
+    font-weight: normal;
+    margin: 0px 0px 20px 3px;
+    transition-delay: 100ms;
+}
+
+.intro > h2 {
+    font-size: 80px;
+    line-height: 1.1;
+    margin: 0px;
+    transition-delay: 200ms;
+}
+
+.intro > h3 {
+    font-size: 80px;
+    line-height: 1.1;
+    color: rgb(136, 146, 176);
+    transition-delay: 300ms;
+}
+
+@media (max-width: 62.5em) {
+    .intro > h1 {
+        font-size: 14px;
+    }
+
+    .intro > h2,
+    .intro > h3 {
+        font-size: 70px;
+    }
+}
+
+.intro div {
+    width: 100%;
+    transition-delay: 400ms;
+}
+
+/* Phone */
+@media (max-width: 480px) {
+}
+
+/* Tablet */
+@media (min-width: 481px) and (max-width: 768px) {
+}
+@media (max-width: 768px) {
+}
+@media (min-width: 481px) {
+}
+
+/* Laptop */
+@media (min-width: 769px) and (max-width: 1024px) {
+}
+@media (min-width: 769px) {
+}
+
+/* Desktops */
+@media (min-width: 1025px) and (max-width: 3200px) {
+}

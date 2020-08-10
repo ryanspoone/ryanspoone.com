@@ -1,0 +1,209 @@
+.experience {
+    position: relative;
+    max-width: 700px;
+    margin: 0px auto;
+    padding: 150px 0px;
+}
+.jobs {
+    display: flex;
+    align-items: flex-start;
+    position: relative;
+}
+.job-tabs {
+    display: block;
+    position: relative;
+    width: max-content;
+    z-index: 3;
+    padding: 0px;
+    margin: 0px;
+    list-style: none;
+}
+
+.job-tab {
+    text-decoration-skip-ink: auto;
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    width: 100%;
+    background-color: transparent;
+    height: 42px;
+    text-align: left;
+    word-break: break-word;
+    font-family: 'SF Mono', 'Fira Code', 'Fira Mono', 'Roboto Mono', 'Lucida Console', Monaco, monospace;
+    font-size: 13px;
+    color: rgb(136, 146, 176);
+    text-decoration: none;
+    padding: 0px 20px 2px;
+    transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
+    border-left: 2px solid rgb(48, 60, 85);
+}
+
+.job-tab.active {
+    color: rgb(100, 255, 218);
+}
+
+.job-info {
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding-top: 12px;
+    padding-left: 30px;
+}
+.job-title {
+    color: rgb(204, 214, 246);
+    font-size: 22px;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+.job-timeframe {
+    font-family: 'SF Mono', 'Fira Code', 'Fira Mono', 'Roboto Mono', 'Lucida Console', Monaco, monospace;
+    font-size: 13px;
+    font-weight: normal;
+    letter-spacing: 0.05em;
+    color: rgb(168, 178, 209);
+    margin-bottom: 30px;
+}
+
+.job-info ul {
+    font-size: 16px;
+    padding: 0px;
+    margin: 0px;
+    list-style: none;
+    font-weight: initial;
+}
+
+.job-info ul li::before {
+    content: '▹';
+    position: absolute;
+    left: 0px;
+    color: rgb(100, 255, 218);
+}
+
+.job-info ul li {
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 10px;
+}
+
+.job-highlight {
+    display: block;
+    width: 2px;
+    height: 42px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 10;
+    transform: translateY(0px);
+    background: rgb(100, 255, 218);
+    border-radius: 3px;
+    transition: transform 0.25s cubic-bezier(0.645, 0.045, 0.355, 1) 0.1s;
+}
+
+.job-company {
+    color: rgb(100, 255, 218);
+}
+
+.job-company a {
+    display: inline-block;
+    text-decoration-skip-ink: auto;
+    position: relative;
+    cursor: pointer;
+    color: rgb(100, 255, 218);
+    text-decoration: none;
+    transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
+}
+
+.job-company a:hover,
+.job-company a:focus {
+    text-decoration: underline;
+}
+
+.job-summary {
+    font-size: 16px;
+    font-weight: lighter;
+}
+
+.job-timeframe {
+    font-family: 'SF Mono', 'Fira Code', 'Fira Mono', 'Roboto Mono', 'Lucida Console', Monaco, monospace;
+    font-size: 13px;
+    font-weight: normal;
+    letter-spacing: 0.05em;
+    color: rgb(168, 178, 209);
+    margin-bottom: 30px;
+}
+
+@media (max-width: 48em) {
+    .experience {
+        padding: 100px 0px;
+    }
+
+    .job-tab {
+        padding: 0px 15px 2px;
+    }
+
+    .job-info {
+        padding-left: 20px;
+    }
+}
+
+@media (max-width: 37.5em) {
+    .jobs {
+        display: block;
+    }
+
+    .job-tabs {
+        display: flex;
+        overflow-x: scroll;
+        margin-bottom: 30px;
+        width: calc(100% + 100px);
+        margin-left: -50px;
+    }
+
+    .job-tabs li:first-of-type {
+        margin-left: 50px;
+    }
+
+    .job-tab {
+        display: flex;
+        -webkit-box-pack: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        align-items: center;
+        text-align: center;
+        min-width: 120px;
+        padding: 0px 15px;
+        border-left: 0px;
+        border-bottom: 2px solid rgb(48, 60, 85);
+    }
+
+    .job-highlight {
+        width: 100%;
+        max-width: 180px;
+        height: 2px;
+        top: auto;
+        bottom: 0px;
+        transform: translateX(0px);
+        margin-left: 50px;
+    }
+
+    .job-info {
+        padding-left: 0px;
+    }
+}
+
+@media (max-width: 30em) {
+    .job-tabs {
+        width: calc(100% + 50px);
+        margin-left: -25px;
+    }
+
+    .job-tabs li:first-of-type {
+        margin-left: 25px;
+    }
+
+    .job-highlight {
+        margin-left: 25px;
+    }
+}

@@ -20,8 +20,15 @@ export default class App extends Component {
                     data: undefined,
                     isLoading: true
                 }
-            }
+            },
+            isMenuShowing: false
         };
+
+        this.toggleMenu = this.toggleMenu.bind(this);
+    }
+
+    toggleMenu() {
+        this.setState({ isMenuShowing: !this.state.isMenuShowing });
     }
 
     componentDidMount() {
@@ -37,6 +44,10 @@ export default class App extends Component {
             }
             console.error('Thrown error from server:', error);
         }
+    }
+
+    componentWillUnmount() {
+        this.toggleMenu = this.toggleMenu.unbind(this);
     }
 
     async getRepoStats() {
@@ -64,8 +75,8 @@ export default class App extends Component {
 
     render() {
         return (
-            <div className="layout">
-                <Header />
+            <div className={`layout ${this.state.isMenuShowing ? 'blur' : ''}`}>
+                <Header toggle={this.toggleMenu} isShowing={_.get(this.state, 'isMenuShowing')} />
                 <SocialSidebar />
                 <EmailSidebar />
 

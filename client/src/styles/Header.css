@@ -18,12 +18,6 @@ header.topnav {
     transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
 }
 
-@media (max-width: 62.5em) {
-    header.topnav {
-        padding: 0px 40px;
-    }
-}
-
 header.topnav.shadow {
     box-shadow: rgba(2, 12, 27, 0.7) 0px 10px 30px -10px;
 }
@@ -94,24 +88,208 @@ header.topnav.hidden {
     padding: 12px 10px;
 }
 
-/* Phone */
-@media (max-width: 480px) {
+.menu-closed {
+    position: fixed;
+    top: 0px;
+    bottom: 0px;
+    right: 0px;
+    width: 100%;
+    height: 100vh;
+    z-index: 10;
+    transform: translateX(100vw);
+    visibility: hidden;
+    display: none;
+    outline: 0px;
+    transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
+}
+.menu-open {
+    position: fixed;
+    top: 0px;
+    bottom: 0px;
+    right: 0px;
+    width: 100%;
+    height: 100vh;
+    z-index: 10;
+    transform: translateX(0vw);
+    visibility: visible;
+    display: none;
+    outline: 0px;
+    transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
 }
 
-/* Tablet */
-@media (min-width: 481px) and (max-width: 768px) {
-}
-@media (max-width: 768px) {
-}
-@media (min-width: 481px) {
+.menu-sidebar {
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgb(23, 42, 69);
+    width: 50vw;
+    height: 100%;
+    position: relative;
+    right: 0px;
+    margin-left: auto;
+    font-family: 'SF Mono', 'Fira Code', 'Fira Mono', 'Roboto Mono', 'Lucida Console', Monaco, monospace;
+    box-shadow: rgba(2, 12, 27, 0.7) -10px 0px 30px -15px;
+    padding: 50px;
 }
 
-/* Laptop */
-@media (min-width: 769px) and (max-width: 1024px) {
-}
-@media (min-width: 769px) {
+.menu-nav {
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    align-items: center;
+    width: 100%;
+    flex-direction: column;
+    text-align: center;
+    color: rgb(204, 214, 246);
 }
 
-/* Desktops */
-@media (min-width: 1025px) and (max-width: 3200px) {
+.menu-nav-list {
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+    list-style: none;
+}
+
+.menu-btn {
+    color: rgb(100, 255, 218);
+    background-color: transparent;
+    font-size: 14px;
+    font-family: 'SF Mono', 'Fira Code', 'Fira Mono', 'Roboto Mono', 'Lucida Console', Monaco, monospace;
+    line-height: 1;
+    cursor: pointer;
+    width: max-content;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(100, 255, 218);
+    border-image: initial;
+    border-radius: 3px;
+    text-decoration: none;
+    transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
+    padding: 18px 50px;
+    margin: 10% auto 0px;
+}
+
+.hamburger {
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    cursor: pointer;
+    transition-timing-function: linear;
+    transition-duration: 0.15s;
+    transition-property: opacity, filter;
+    text-transform: none;
+    color: inherit;
+    background-color: transparent;
+    display: none;
+    overflow: visible;
+    margin: 0px -12px 0px 0px;
+    padding: 15px;
+    border-width: 0px;
+    border-style: initial;
+    border-color: initial;
+    border-image: initial;
+}
+
+.hamburger-box {
+    position: relative;
+    display: inline-block;
+    width: 30px;
+    height: 24px;
+}
+
+.hamburger-inner {
+    background-color: rgb(100, 255, 218);
+    position: absolute;
+    width: 30px;
+    height: 2px;
+    top: 50%;
+    left: 0px;
+    right: 0px;
+    transition-duration: 0.22s;
+    transition-property: transform;
+    transition-delay: 0s;
+    transform: rotate(0deg);
+    transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    border-radius: 3px;
+}
+
+.hamburger-inner::before,
+.hamburger-inner::after {
+    content: '';
+    display: block;
+    background-color: rgb(100, 255, 218);
+    position: absolute;
+    left: auto;
+    right: 0px;
+    width: 30px;
+    height: 2px;
+    transition-timing-function: ease;
+    transition-duration: 0.15s;
+    transition-property: transform;
+    border-radius: 4px;
+}
+
+.hamburger-inner::after {
+    width: 80%;
+    bottom: -10px;
+    transform: rotate(0deg);
+    transition: bottom 0.1s ease-in 0.25s, transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19) 0s;
+}
+
+.hamburger-inner::before,
+.hamburger-inner::after {
+    content: '';
+    display: block;
+    background-color: rgb(100, 255, 218);
+    position: absolute;
+    left: auto;
+    right: 0px;
+    width: 30px;
+    height: 2px;
+    transition-timing-function: ease;
+    transition-duration: 0.15s;
+    transition-property: transform;
+    border-radius: 4px;
+}
+
+.hamburger-inner::before {
+    width: 120%;
+    top: -10px;
+    opacity: 1;
+    transition: top 0.1s ease-in 0.25s, opacity 0.1s ease-in 0s;
+}
+
+@media (max-width: 62.5em) {
+    header.topnav {
+        padding: 0px 40px;
+    }
+}
+
+@media (max-width: 48em) {
+    header.topnav {
+        padding: 0px 25px;
+    }
+    .menu-closed {
+        display: block;
+    }
+    .menu-open {
+        display: block;
+    }
+    .hamburger {
+        display: flex;
+    }
+    .topnav .sections {
+        display: none;
+    }
+}
+
+@media (max-width: 37.5em) {
+    .menu-sidebar {
+        padding: 25px;
+    }
 }

@@ -13,6 +13,10 @@
     min-height: 100vh;
 }
 
+.layout.blur {
+    overflow: hidden;
+}
+
 .main {
     max-width: 1600px;
     max-width: -webkit-fill-available;

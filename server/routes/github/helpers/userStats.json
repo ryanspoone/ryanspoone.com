@@ -1,0 +1,79 @@
+{
+    "data": {
+        "user": {
+            "name": "Ryan Spoone",
+            "gists": {
+                "totalCount": 6
+            },
+            "repositories": {
+                "totalCount": 16
+            },
+            "commitComments": {
+                "totalCount": 2
+            },
+            "issueComments": {
+                "totalCount": 560
+            },
+            "contributionsCollection": {
+                "contributionCalendar": {
+                    "totalContributions": 1301
+                },
+                "totalIssueContributions": 0,
+                "totalCommitContributions": 564,
+                "totalRepositoryContributions": 10,
+                "totalPullRequestContributions": 342,
+                "totalPullRequestReviewContributions": 384,
+                "totalRepositoriesWithContributedIssues": 0,
+                "totalRepositoriesWithContributedCommits": 45,
+                "totalRepositoriesWithContributedPullRequests": 37
+            },
+            "pullRequests": {
+                "totalCount": 1042
+            },
+            "topRepositories": {
+                "edges": [
+                    {
+                        "node": {
+                            "name": "integration-crm",
+                            "primaryLanguage": {
+                                "name": "JavaScript"
+                            }
+                        }
+                    },
+                    {
+                        "node": {
+                            "name": "rest-server",
+                            "primaryLanguage": {
+                                "name": "JavaScript"
+                            }
+                        }
+                    },
+                    {
+                        "node": {
+                            "name": "integration-office365",
+                            "primaryLanguage": {
+                                "name": "JavaScript"
+                            }
+                        }
+                    },
+                    {
+                        "node": {
+                            "name": "integration-box",
+                            "primaryLanguage": {
+                                "name": "JavaScript"
+                            }
+                        }
+                    },
+                    {
+                        "node": {
+                            "name": "olono-cli",
+                            "primaryLanguage": {
+                                "name": "JavaScript"
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    }
+}

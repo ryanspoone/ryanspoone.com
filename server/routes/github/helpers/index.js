@@ -1,3 +1,6 @@
-import getData from './getData';
+import getFeatured from './getFeatured';
+import getRepoStats from './getRepoStats';
+import getUserStats from './getUserStats';
+import getRepositories from './getRepositories';
 
-export { getData };
+export { getFeatured, getRepoStats, getUserStats, getRepositories };

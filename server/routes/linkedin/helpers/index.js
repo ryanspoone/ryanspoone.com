@@ -1,3 +1,3 @@
-import getData from './getData';
+import getPositions from './getPositions';
 
-export { getData };
+export { getPositions };

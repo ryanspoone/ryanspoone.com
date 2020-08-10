@@ -14,16 +14,14 @@ const simplifyPositions = positions =>
             startDate: _.get(position, 'start-date'),
             endDate: _.get(position, 'end-date'),
             isCurrent: _.get(position, 'is-current'),
-            company: _.get(position, 'company')
+            company: _.get(position, 'company'),
+            companyUrl: _.get(position, 'company-url')
         };
     });
 
-export default function getData() {
+export default function getPositions() {
     const currentPositions = _.get(data, 'three-current-positions', []);
     const pastPositions = _.get(data, 'three-past-positions', []);
 
-    return {
-        currentPositions: simplifyPositions(currentPositions),
-        pastPositions: simplifyPositions(pastPositions)
-    };
+    return [...simplifyPositions(currentPositions), ...simplifyPositions(pastPositions)];
 }

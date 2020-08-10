@@ -29,7 +29,7 @@ export default class Github extends Component {
                     <h3 className="heading">Some Things I&apos;ve Built</h3>
                     <div>
                         <p>Data returned from the API:</p>
-                        <pre style={{ overflow: 'hidden' }}>{data}</pre>
+                        <pre>{data}</pre>
                     </div>
                 </section>
             );

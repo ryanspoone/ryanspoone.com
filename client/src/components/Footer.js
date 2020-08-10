@@ -12,7 +12,11 @@ export default class Footer extends Component {
     render() {
         return (
             <footer className="foot">
-                <a href="https://github.com/ryanspoone/ryanspoone.com">
+                <a
+                    href="https://github.com/ryanspoone/ryanspoone.com"
+                    target="_blank"
+                    rel="nofollow noopener noreferrer"
+                >
                     <div>
                         Built with{' '}
                         <span>

@@ -3,11 +3,6 @@
     max-width: 600px;
     padding: 150px 0px;
     margin: 0px auto 100px;
-    visibility: visible;
-    opacity: 1;
-    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
-    transition: opacity 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) 0.2s,
-        transform 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) 0.2s;
 }
 
 .contact .heading {

@@ -28,10 +28,14 @@ const Header = props => {
     const isShowing = props.isShowing;
     const toggle = props.toggle;
 
+    const topOfPage = () => {
+        window.scrollTo(0, 0);
+    };
+
     return (
-        <header className={`topnav ${shadowStyle} ${hiddenStyle}`}>
+        <header className={`head ${shadowStyle} ${hiddenStyle}`}>
             <nav>
-                <NavLink className="brand" to="/">
+                <NavLink className="brand" to="/" onClick={topOfPage}>
                     <img src="/images/logo.png" alt="Ryan Spoone Logo" />
                 </NavLink>
                 <div className="hamburger" onClick={toggle}>

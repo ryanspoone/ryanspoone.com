@@ -1,4 +1,4 @@
-header.topnav {
+header.head {
     display: flex;
     -webkit-box-pack: justify;
     justify-content: space-between;
@@ -18,19 +18,19 @@ header.topnav {
     transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
 }
 
-header.topnav.shadow {
+header.head.shadow {
     box-shadow: rgba(2, 12, 27, 0.7) 0px 10px 30px -10px;
 }
 
-header.topnav.hidden {
+header.head.hidden {
     transform: translateY(-110%);
 }
 
-.topnav img {
+.head img {
     height: inherit;
 }
 
-.topnav nav {
+.head nav {
     display: flex;
     -webkit-box-pack: justify;
     justify-content: space-between;
@@ -45,14 +45,14 @@ header.topnav.hidden {
     margin-right: 4rem;
 }
 
-.topnav .brand {
+.head .brand {
     display: block;
     color: rgb(100, 255, 218);
     width: 42px;
     height: 42px;
 }
 
-.topnav .sections {
+.head .sections {
     font-size: 13px;
     display: flex;
     -webkit-box-align: center;
@@ -265,13 +265,13 @@ header.topnav.hidden {
 }
 
 @media (max-width: 62.5em) {
-    header.topnav {
+    header.head {
         padding: 0px 40px;
     }
 }
 
 @media (max-width: 48em) {
-    header.topnav {
+    header.head {
         padding: 0px 25px;
     }
     .menu-closed {
@@ -283,7 +283,7 @@ header.topnav.hidden {
     .hamburger {
         display: flex;
     }
-    .topnav .sections {
+    .head .sections {
         display: none;
     }
 }

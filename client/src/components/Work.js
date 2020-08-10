@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { get, isString } from 'lodash';
+import _ from 'lodash';
 
 export default class Github extends Component {
     static propTypes = {
@@ -10,7 +10,7 @@ export default class Github extends Component {
     };
 
     render() {
-        if (get(this.props, 'isLoading')) {
+        if (_.get(this.props, 'isLoading')) {
             return (
                 <section id="work" className="work">
                     <h3 className="heading">Some Things I&apos;ve Built</h3>
@@ -19,17 +19,17 @@ export default class Github extends Component {
                     </div>
                 </section>
             );
-        } else if (get(this.props, 'data')) {
-            let data = get(this.props, 'data');
-            if (!isString(data)) {
-                data = JSON.stringify(data);
+        } else if (_.get(this.props, 'data')) {
+            let data = _.get(this.props, 'data');
+            if (!_.isString(data)) {
+                data = JSON.stringify(data, null, 4);
             }
             return (
                 <section id="work" className="work">
                     <h3 className="heading">Some Things I&apos;ve Built</h3>
                     <div>
                         <p>Data returned from the API:</p>
-                        <code>{data}</code>
+                        <pre style={{ overflow: 'hidden' }}>{data}</pre>
                     </div>
                 </section>
             );
@@ -38,7 +38,7 @@ export default class Github extends Component {
                 <section id="work" className="work">
                     <h3 className="heading">Some Things I&apos;ve Built</h3>
                     <div className="alert alert-danger" role="alert">
-                        An error occurred: {get(this.props, 'error', 'Unable to determine the state.')}
+                        An error occurred: {_.get(this.props, 'error', 'Unable to determine the state.')}
                     </div>
                 </section>
             );

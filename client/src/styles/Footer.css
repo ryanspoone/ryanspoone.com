@@ -15,10 +15,13 @@ footer svg {
     display: inline-block;
     height: 15px;
     width: auto;
+}
+
+.github-stars-forks svg {
     margin-right: 5px;
 }
 
-footer div > span {
+footer div.github-stars-forks > span {
     display: inline-flex;
     -webkit-box-align: center;
     align-items: center;
@@ -36,30 +39,8 @@ footer a:focus {
     text-decoration: none;
 }
 
-footer.mastfoot {
+footer.foot {
     font-family: 'SF Mono', 'Fira Code', 'Fira Mono', 'Roboto Mono', 'Lucida Console', Monaco, monospace;
     font-size: 12px;
     line-height: 1;
-}
-
-/* Phone */
-@media (max-width: 480px) {
-}
-
-/* Tablet */
-@media (min-width: 481px) and (max-width: 768px) {
-}
-@media (max-width: 768px) {
-}
-@media (min-width: 481px) {
-}
-
-/* Laptop */
-@media (min-width: 769px) and (max-width: 1024px) {
-}
-@media (min-width: 769px) {
-}
-
-/* Desktops */
-@media (min-width: 1025px) and (max-width: 3200px) {
 }

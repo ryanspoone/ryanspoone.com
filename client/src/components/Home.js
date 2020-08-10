@@ -13,10 +13,15 @@ export default class Home extends Component {
         super(props);
 
         this.state = {
-            github: {
+            githubUser: {
+                error: undefined,
                 data: undefined,
-                isLoading: true,
-                error: undefined
+                isLoading: true
+            },
+            githubFeatured: {
+                error: undefined,
+                data: undefined,
+                isLoading: true
             },
             linkedin: {
                 data: undefined,
@@ -30,7 +35,8 @@ export default class Home extends Component {
         window.scrollTo(0, 0);
 
         try {
-            this.getGithubRepos();
+            this.getFeaturedRepos();
+            this.getUserStats();
             this.getLinkedInJobs();
         } catch (err) {
             let error = _.get(err, 'message') || _.get(err, 'error', err);
@@ -44,13 +50,13 @@ export default class Home extends Component {
         }
     }
 
-    async getGithubRepos() {
-        const response = await fetch('/api/github');
+    async getFeaturedRepos() {
+        const response = await fetch('/api/github/featured');
         const data = await response.json();
         if (response.status !== 200) {
             const error = _.get(data, 'error', data);
             this.setState({
-                github: {
+                githubFeatured: {
                     error,
                     data: undefined,
                     isLoading: false
@@ -58,7 +64,30 @@ export default class Home extends Component {
             });
         } else {
             this.setState({
-                github: {
+                githubFeatured: {
+                    data,
+                    error: undefined,
+                    isLoading: false
+                }
+            });
+        }
+    }
+
+    async getUserStats() {
+        const response = await fetch('/api/github/stats');
+        const data = await response.json();
+        if (response.status !== 200) {
+            const error = _.get(data, 'error', data);
+            this.setState({
+                githubUser: {
+                    error,
+                    data: undefined,
+                    isLoading: false
+                }
+            });
+        } else {
+            this.setState({
+                githubUser: {
                     data,
                     error: undefined,
                     isLoading: false
@@ -101,9 +130,9 @@ export default class Home extends Component {
                     isLoading={_.get(this.state, 'linkedin.isLoading')}
                 />
                 <Work
-                    data={_.get(this.state, 'github.data')}
-                    error={_.get(this.state, 'github.error')}
-                    isLoading={_.get(this.state, 'github.isLoading')}
+                    data={_.get(this.state, 'githubFeatured.data')}
+                    error={_.get(this.state, 'githubFeatured.error')}
+                    isLoading={_.get(this.state, 'githubFeatured.isLoading')}
                 />
                 <Contact />
             </main>

@@ -32,22 +32,22 @@ const Header = () => {
                 <div className="sections">
                     <ol className="sections-list">
                         <li className="sections-item">
-                            <a className="" href="#about">
+                            <a className="" href="/#about">
                                 About
                             </a>
                         </li>
                         <li className="sections-item">
-                            <a className="" href="#experience">
+                            <a className="" href="/#experience">
                                 Experience
                             </a>
                         </li>
                         <li className="sections-item">
-                            <a className="" href="#work">
+                            <a className="" href="/#work">
                                 Work
                             </a>
                         </li>
                         <li className="sections-item">
-                            <a className="" href="#contact">
+                            <a className="" href="/#contact">
                                 Contact
                             </a>
                         </li>

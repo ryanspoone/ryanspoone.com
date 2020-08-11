@@ -18,18 +18,16 @@
 }
 
 .main {
-    padding: 200px 150px;
-    margin: 0px auto;
     width: 100%;
-    max-width: stretch;
-    max-width: -webkit-fill-available;
-    max-width: -moz-available;
+    max-width: 1600px;
     min-height: 100vh;
     counter-reset: section 0;
+    padding: 200px 150px;
+    margin: 0px auto;
 }
 
 .main.fill-height {
-    padding-top: 50px;
+    padding-top: 0px;
     padding-bottom: 0px;
 }
 

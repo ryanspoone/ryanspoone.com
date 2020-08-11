@@ -91,7 +91,7 @@ export default class Github extends Component {
                                 className="job-highlight"
                                 style={{
                                     transform: this.state.isMobile
-                                        ? `translateX(${150 * this.state.selectedPosition}px)`
+                                        ? `translateX(${180 * this.state.selectedPosition}px)`
                                         : `translateY(${42 * this.state.selectedPosition}px)`
                                 }}
                             ></span>

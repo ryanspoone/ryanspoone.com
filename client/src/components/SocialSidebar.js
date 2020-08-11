@@ -2,7 +2,7 @@ import React from 'react';
 
 const SocialSidebar = () => (
     <div orientation="left" className="social">
-        <ul className="social-list fade-enter-done">
+        <ul className="social-list">
             <li>
                 <a
                     href="https://github.com/ryanspoone"

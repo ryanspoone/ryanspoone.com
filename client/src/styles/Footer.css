@@ -1,4 +1,4 @@
-footer {
+footer.foot {
     display: flex;
     -webkit-box-pack: center;
     justify-content: center;
@@ -28,7 +28,7 @@ footer div.github-stars-forks > span {
     margin: 0px 7px;
 }
 
-footer a {
+footer.foot {
     color: rgb(168, 178, 209);
     padding: 10px;
 }
@@ -39,7 +39,7 @@ footer a:focus {
     text-decoration: none;
 }
 
-footer.foot {
+.foot .metadata {
     font-family: 'SF Mono', 'Fira Code', 'Fira Mono', 'Roboto Mono', 'Lucida Console', Monaco, monospace;
     font-size: 12px;
     line-height: 1;

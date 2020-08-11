@@ -12,7 +12,7 @@ class NotFound extends Component {
 
     render() {
         return (
-            <main className="main not-found fill-height fade-enter-done">
+            <main className="main not-found fill-height">
                 <h1>404</h1>
                 <h2>Page Not Found</h2>
                 <code>{_.get(this.props, 'location.pathname')}</code>

@@ -4,11 +4,13 @@
     margin: 0px auto;
     padding: 150px 0px;
 }
+
 .jobs {
     display: flex;
     align-items: flex-start;
     position: relative;
 }
+
 .job-tabs {
     display: block;
     position: relative;
@@ -172,7 +174,7 @@
         -webkit-box-align: center;
         align-items: center;
         text-align: center;
-        min-width: 120px;
+        min-width: 180px;
         padding: 0px 15px;
         border-left: 0px;
         border-bottom: 2px solid rgb(48, 60, 85);

@@ -31,6 +31,33 @@
     margin-left: unset;
 }
 
+.contact .title {
+    font-size: 60px;
+    margin: 0px 0px 20px;
+}
+
+.main .contact a {
+    display: inline-block;
+    text-decoration-skip-ink: auto;
+    position: relative;
+    cursor: pointer;
+    color: rgb(100, 255, 218);
+    text-decoration: none;
+    transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
+}
+
+.contact a::after {
+    content: '';
+    display: block;
+    width: 0px;
+    height: 1px;
+    position: relative;
+    bottom: 0.37em;
+    background-color: rgb(100, 255, 218);
+    opacity: 0.5;
+    transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
+}
+
 .contact .heading::before {
     counter-increment: section 1;
     content: '0' counter(section) '.';
@@ -47,12 +74,24 @@
     bottom: 0px;
     font-size: 14px;
 }
+.contact .heading::after {
+    display: none;
+}
+
+.contact .btn::after {
+    display: none !important;
+}
 
 @media (max-width: 62.5em) {
     .contact .heading::before {
         font-size: 13px;
     }
-
+    .contact .heading::after {
+        width: unset;
+    }
+    .contact .title {
+        font-size: 50px;
+    }
     .contact .heading {
         font-size: 14px;
     }
@@ -60,5 +99,16 @@
 @media (max-width: 48em) {
     .contact {
         padding: 100px 0px;
+    }
+    .contact .heading::after {
+        width: 100%;
+    }
+    .contact .title {
+        font-size: 40px;
+    }
+}
+@media (max-width: 37.5em) {
+    .contact .heading::after {
+        margin-left: 10px;
     }
 }

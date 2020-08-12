@@ -134,7 +134,7 @@ export default class Archive extends Component {
                                             <td className="language hide-on-mobile">{repo.language}</td>
                                             <td className="tech hide-on-mobile">
                                                 {repo.repositoryTopics.map((tech, idx) => {
-                                                    if (index === _.size(repo.repositoryTopics) - 1) {
+                                                    if (idx === _.size(repo.repositoryTopics) - 1) {
                                                         return <span key={idx}>{tech}</span>;
                                                     }
                                                     return (

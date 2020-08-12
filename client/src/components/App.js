@@ -47,7 +47,7 @@ export default class App extends Component {
     }
 
     componentWillUnmount() {
-        this.toggleMenu = this.toggleMenu.unbind(this);
+        this.toggleMenu = this.toggleMenu.bind(this);
     }
 
     async getRepoStats() {

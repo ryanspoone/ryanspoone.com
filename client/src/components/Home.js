@@ -5,7 +5,7 @@ import fetch from 'isomorphic-fetch';
 import Intro from './Intro';
 import About from './About';
 import Experience from './Experience';
-import Work from './Work';
+import Projects from './Projects';
 import Contact from './Contact';
 
 export default class Home extends Component {
@@ -129,7 +129,7 @@ export default class Home extends Component {
                     error={_.get(this.state, 'linkedin.error')}
                     isLoading={_.get(this.state, 'linkedin.isLoading')}
                 />
-                <Work
+                <Projects
                     data={_.get(this.state, 'githubFeatured.data')}
                     error={_.get(this.state, 'githubFeatured.error')}
                     isLoading={_.get(this.state, 'githubFeatured.isLoading')}

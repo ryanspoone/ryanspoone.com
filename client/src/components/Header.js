@@ -56,8 +56,8 @@ const Header = props => {
                             </a>
                         </li>
                         <li className="sections-item">
-                            <a className="" href="/#work">
-                                Work
+                            <a className="" href="/#projects">
+                                Projects
                             </a>
                         </li>
                         <li className="sections-item">
@@ -67,8 +67,8 @@ const Header = props => {
                         </li>
                     </ol>
                     <div>
-                        <Link className="btn btn-primary" to="/blog">
-                            Blog
+                        <Link className="btn btn-primary" to="/garden">
+                            Garden
                         </Link>
                     </div>
                 </div>
@@ -92,8 +92,8 @@ const Header = props => {
                                 </a>
                             </li>
                             <li className="menu-nav-item">
-                                <a className="menu-nav-link" href="/#work" onClick={toggle}>
-                                    Work
+                                <a className="menu-nav-link" href="/#projects" onClick={toggle}>
+                                    Projects
                                 </a>
                             </li>
                             <li className="menu-nav-item">
@@ -102,8 +102,8 @@ const Header = props => {
                                 </a>
                             </li>
                         </ol>
-                        <Link className="menu-btn" to="/blog" onClick={toggle}>
-                            Blog
+                        <Link className="menu-btn" to="/garden" onClick={toggle}>
+                            Garden
                         </Link>
                     </nav>
                 </aside>

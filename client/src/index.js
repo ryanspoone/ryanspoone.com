@@ -11,7 +11,7 @@ import './styles/EmailSidebar.css';
 import './styles/Intro.css';
 import './styles/About.css';
 import './styles/Experience.css';
-import './styles/Work.css';
+import './styles/Projects.css';
 import './styles/Contact.css';
 import './styles/Archive.css';
 import * as serviceWorker from './serviceWorker';

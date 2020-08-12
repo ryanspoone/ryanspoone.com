@@ -1,4 +1,4 @@
-.email {
+.email-sidebar {
     width: 40px;
     position: fixed;
     bottom: 0px;
@@ -8,7 +8,7 @@
     color: rgb(168, 178, 209);
 }
 
-.email-item {
+.email-sidebar .email-item {
     display: flex;
     flex-direction: column;
     -webkit-box-align: center;
@@ -16,7 +16,7 @@
     position: relative;
 }
 
-.email-item::after {
+.email-sidebar .email-item::after {
     content: '';
     display: block;
     width: 1px;
@@ -25,7 +25,7 @@
     margin: 0px auto;
 }
 
-.email-item a {
+.email-sidebar .email-item a {
     font-family: 'SF Mono', 'Fira Code', 'Fira Mono', 'Roboto Mono', 'Lucida Console', Monaco, monospace;
     font-size: 12px;
     letter-spacing: 0.1em;
@@ -35,20 +35,20 @@
     padding: 10px;
 }
 
-.email-item a:hover,
-.email-item a:focus {
+.email-sidebar .email-item a:hover,
+.email-sidebar .email-item a:focus {
     text-decoration: none;
     transform: translateY(-3px);
 }
 
 @media (max-width: 62.5em) {
-    .email {
+    .email-sidebar {
         right: 25px;
     }
 }
 
 @media (max-width: 48em) {
-    .email {
+    .email-sidebar {
         display: none;
     }
 }

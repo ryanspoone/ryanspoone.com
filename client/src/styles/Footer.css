@@ -44,3 +44,37 @@ footer a:focus {
     font-size: 12px;
     line-height: 1;
 }
+
+.foot .social {
+    color: rgb(168, 178, 209);
+    width: 100%;
+    max-width: 270px;
+    display: none;
+    margin: 0px auto 10px;
+}
+
+.foot .social .social-list {
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    align-items: center;
+    padding: 0px;
+    margin: 0px;
+    list-style: none;
+}
+
+.foot .social-link {
+    padding: 10px;
+}
+
+.foot .social-link svg {
+    width: 20px;
+    height: 20px;
+}
+
+@media (max-width: 48em) {
+    .foot .social {
+        display: block;
+    }
+}

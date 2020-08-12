@@ -1,7 +1,7 @@
 import React from 'react';
 
 const SocialSidebar = () => (
-    <div orientation="left" className="social">
+    <div orientation="left" className="social-sidebar">
         <ul className="social-list">
             <li>
                 <a

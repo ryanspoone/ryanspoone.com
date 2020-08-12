@@ -8,6 +8,7 @@ import Footer from './Footer';
 import SocialSidebar from './SocialSidebar';
 import EmailSidebar from './EmailSidebar';
 import NotFound from './NotFound';
+import Archive from './Archive';
 
 export default class App extends Component {
     constructor(props) {
@@ -81,6 +82,7 @@ export default class App extends Component {
                 <EmailSidebar />
 
                 <Switch>
+                    <Route exact path="/archive" component={Archive} />
                     <Route exact path="/" component={Home} />
                     <Route component={NotFound} />
                 </Switch>

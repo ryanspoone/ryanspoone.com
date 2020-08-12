@@ -6,22 +6,34 @@ export default `query {
           node {
             name
             url
+            isTemplate
             shortDescriptionHTML
+            primaryLanguage {
+                name
+            }
             forkCount
-            stargazers {
-              totalCount
-            }
-            repositoryTopics(first: 3) {
-              edges {
-                node {
-                  topic {
-                    name
-                  }
-                }
-              }
-            }
+            updatedAt
+            createdAt
             isPrivate
             homepageUrl
+            stargazers {
+                totalCount
+            }
+            issues {
+                totalCount
+            }
+            pullRequests {
+                totalCount
+            }
+            repositoryTopics(first: 3) {
+                edges {
+                    node {
+                        topic {
+                            name
+                        }
+                    }
+                }
+            }
           }
         }
       }

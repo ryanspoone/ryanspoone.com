@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import _ from 'lodash';
 
@@ -69,24 +70,12 @@ export default class Github extends Component {
                 </section>
             );
         } else if (_.get(this.props, 'data')) {
-            // name: _.get(repo, 'name'),
-            // url: _.get(repo, 'url'),
-            // isTemplate: _.get(repo, 'isTemplate'),
-            // description: _.get(repo, 'shortDescriptionHTML'),
-            // language: _.get(repo, 'primaryLanguage.name'),
-            // forkCount: _.get(repo, 'forkCount'),
-            // starCount: _.get(repo, 'stargazers.totalCount'),
-            // updatedAt: _.get(repo, 'updatedAt'),
-            // createdAt: _.get(repo, 'createdAt'),
-            // issueCount: _.get(repo, 'issues.totalCount'),
-            // pullRequestCount: _.get(repo, 'pullRequests.totalCount'),
-            // repositoryTopics: _.map(_.get(repo, 'repositoryTopics.edges'), topic =>
-            //     _.get(topic, 'node.topic.name')
-            // ),
-            // homepageUrl: _.get(repo, 'homepageUrl')
             return (
                 <section id="projects" className="projects">
                     <h3 className="heading">Some Things I&apos;ve Built</h3>
+                    <Link to="/archive" className="archive-link">
+                        view the archive
+                    </Link>
                     <div className="projects-grid">
                         <div className="projects-container">
                             {this.props.data.map((repo, index) => {

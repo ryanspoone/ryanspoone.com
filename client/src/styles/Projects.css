@@ -127,6 +127,54 @@
     margin-right: 15px;
 }
 
+a.archive-link::after {
+    content: '';
+    display: block;
+    width: 0px;
+    height: 1px;
+    position: relative;
+    bottom: 0.37em;
+    background-color: rgb(100, 255, 218);
+    opacity: 0.5;
+    transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
+}
+
+a.archive-link::after {
+    bottom: 0.1em;
+}
+
+a.archive-link:hover::after,
+a.archive-link:focus::after,
+a.archive-link:active::after {
+    width: 100%;
+}
+
+.projects a:hover,
+.projects a:focus {
+    color: rgb(100, 255, 218);
+}
+
+a.archive-link {
+    display: inline-block;
+    text-decoration-skip-ink: auto;
+    position: relative;
+    cursor: pointer;
+    color: rgb(100, 255, 218);
+    text-align: center;
+    font-family: 'SF Mono', 'Fira Code', 'Fira Mono', 'Roboto Mono', 'Lucida Console', Monaco, monospace;
+    font-size: 14px;
+    text-decoration: none;
+    transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
+    margin: 0px auto;
+}
+
+a.archive-link:hover,
+a.archive-link:focus,
+a.archive-link:active {
+    color: rgb(100, 255, 218);
+    outline: 0px;
+}
+
 @media (max-width: 62.5em) {
     .projects-grid .projects-container {
         grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));

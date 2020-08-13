@@ -4,7 +4,7 @@ import _ from 'lodash';
 // Use mock data because the LinkedIn API is super locked down.
 // Hoping that in the future, this logic will be plug in and play
 // once the API becomes more inclusive.
-import data from './data.json';
+import data from './data.js';
 
 const simplifyPositions = positions =>
     _.map(positions, position => {

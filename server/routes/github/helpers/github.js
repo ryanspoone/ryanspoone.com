@@ -1,5 +1,5 @@
 import fetch from 'isomorphic-fetch';
-const secureOptions = require('constants');
+import secureOptions from 'constants';
 
 export default async query => {
     const response = await fetch('https://api.github.com/graphql', {

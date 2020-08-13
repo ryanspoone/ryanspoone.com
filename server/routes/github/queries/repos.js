@@ -1,6 +1,6 @@
 export default `query {
     user(login: "ryanspoone") {
-      repositories(first: 50) {
+      repositories(first: 50 privacy: PUBLIC ownerAffiliations: OWNER) {
         totalCount
         edges {
           node {

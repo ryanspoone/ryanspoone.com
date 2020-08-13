@@ -23,6 +23,7 @@ const simplifyRepositories = response => {
                 repositoryTopics: _.map(_.get(repo, 'repositoryTopics.edges'), topic =>
                     _.get(topic, 'node.topic.name')
                 ),
+                isPrivate: _.get(repo, 'isPrivate'),
                 homepageUrl: _.get(repo, 'homepageUrl')
             };
         })

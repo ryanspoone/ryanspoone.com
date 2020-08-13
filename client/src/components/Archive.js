@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import _ from 'lodash';
+import { prettifyTitle } from '../utils';
 
 const GithubLink = props => {
     if (!props.url) {
@@ -130,7 +131,7 @@ export default class Archive extends Component {
                                             <td className="overline year">
                                                 {new Date(repo.createdAt).getFullYear()}
                                             </td>
-                                            <td className="title">{repo.name}</td>
+                                            <td className="title">{prettifyTitle(repo.name)}</td>
                                             <td className="language hide-on-mobile">{repo.language}</td>
                                             <td className="tech hide-on-mobile">
                                                 {repo.repositoryTopics.map((tech, idx) => {

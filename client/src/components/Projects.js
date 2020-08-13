@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import _ from 'lodash';
+import { prettifyTitle } from '../utils';
 
 const GithubLink = props => {
     if (!props.url) {
@@ -99,7 +100,7 @@ export default class Github extends Component {
                                                         <ExternalLink url={repo.homepageUrl} />
                                                     </div>
                                                 </div>
-                                                <h5 className="project-name">{repo.name}</h5>
+                                                <h5 className="project-name">{prettifyTitle(repo.name)}</h5>
                                                 <div className="project-description">{repo.description}</div>
                                             </header>
                                             <footer>

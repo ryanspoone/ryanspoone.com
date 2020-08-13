@@ -21,8 +21,8 @@ indexRouter.get('/', (req, res) => {
     res.send("Ryan Spoone's API");
 });
 
-import githubRoutes from './routes/github';
-import linkedinRoutes from './routes/linkedin';
+import githubRoutes from './routes/github/index.js';
+import linkedinRoutes from './routes/linkedin/index.js';
 
 indexRouter.use('/github', githubRoutes);
 indexRouter.use('/linkedin', linkedinRoutes);

@@ -2,7 +2,7 @@ import _ from 'lodash';
 import express from 'express';
 const router = express.Router();
 
-import { getFeatured, getRepoStats, getUserStats, getRepositories } from './helpers';
+import { getFeatured, getRepoStats, getUserStats, getRepositories } from './helpers/index.js';
 
 router.post('/', async (req, res) => {
     try {

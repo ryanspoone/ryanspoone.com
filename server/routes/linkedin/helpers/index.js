@@ -1,3 +1,3 @@
-import getPositions from './getPositions';
+import getPositions from './getPositions.js';
 
 export { getPositions };

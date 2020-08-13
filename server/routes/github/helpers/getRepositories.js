@@ -1,6 +1,6 @@
 import _ from 'lodash';
-import github from './github';
-import query from '../queries/repos';
+import github from './github.js';
+import query from '../queries/repos.js';
 
 const simplifyRepositories = response => {
     const repositories = _.get(response, 'data.user.repositories.edges');

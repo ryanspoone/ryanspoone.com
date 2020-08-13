@@ -1,6 +1,6 @@
 import _ from 'lodash';
-import github from './github';
-import query from '../queries/repo';
+import github from './github.js';
+import query from '../queries/repo.js';
 
 const simplifyStats = stats => {
     const data = _.get(stats, 'data.user.repository');

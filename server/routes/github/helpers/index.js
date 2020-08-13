@@ -1,6 +1,6 @@
-import getFeatured from './getFeatured';
-import getRepoStats from './getRepoStats';
-import getUserStats from './getUserStats';
-import getRepositories from './getRepositories';
+import getFeatured from './getFeatured.js';
+import getRepoStats from './getRepoStats.js';
+import getUserStats from './getUserStats.js';
+import getRepositories from './getRepositories.js';
 
 export { getFeatured, getRepoStats, getUserStats, getRepositories };

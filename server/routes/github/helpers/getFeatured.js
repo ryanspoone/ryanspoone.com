@@ -1,6 +1,6 @@
 import _ from 'lodash';
-import github from './github';
-import query from '../queries/featured';
+import github from './github.js';
+import query from '../queries/featured.js';
 
 const simplifyFeatured = response => {
     const featuredRepos = _.get(response, 'data.user.pinnedItems.edges');

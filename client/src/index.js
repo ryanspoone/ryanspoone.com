@@ -24,4 +24,5 @@ render(
     document.getElementById('root')
 );
 
-serviceWorker.register();
+// Change to .register() to use it.
+serviceWorker.unregister();

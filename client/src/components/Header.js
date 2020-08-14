@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { Link, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import useDocumentScrollThrottled from './useDocumentScrollThrottled';
 
 const Header = props => {
@@ -67,9 +67,9 @@ const Header = props => {
                         </li>
                     </ol>
                     <div>
-                        <Link className="btn btn-primary" to="/garden">
-                            Garden
-                        </Link>
+                        <a className="btn btn-primary" href="/blog">
+                            Blog
+                        </a>
                     </div>
                 </div>
             </nav>
@@ -102,9 +102,9 @@ const Header = props => {
                                 </a>
                             </li>
                         </ol>
-                        <Link className="menu-btn" to="/garden" onClick={toggle}>
-                            Garden
-                        </Link>
+                        <a className="menu-btn" href="/blog" onClick={toggle}>
+                            Blog
+                        </a>
                     </nav>
                 </aside>
             </div>

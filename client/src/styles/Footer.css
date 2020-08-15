@@ -15,6 +15,7 @@ footer svg {
     display: inline-block;
     height: 15px;
     width: auto;
+    fill: currentcolor;
 }
 
 .github-stars-forks svg {

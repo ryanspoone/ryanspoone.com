@@ -31,6 +31,13 @@
     padding: 10px;
 }
 
+.social-sidebar svg {
+    display: inline-block;
+    height: 15px;
+    width: auto;
+    fill: currentcolor;
+}
+
 .social-sidebar .social-item svg {
     width: 18px;
     height: 18px;

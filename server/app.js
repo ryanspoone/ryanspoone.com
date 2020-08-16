@@ -23,9 +23,11 @@ indexRouter.get('/', (req, res) => {
 
 import githubRoutes from './routes/github/index.js';
 import linkedinRoutes from './routes/linkedin/index.js';
+import blogRoutes from './routes/blog/index.js';
 
 indexRouter.use('/github', githubRoutes);
 indexRouter.use('/linkedin', linkedinRoutes);
+indexRouter.use('/blog', blogRoutes);
 
 app.use(process.env.SERVER_ROUTE, indexRouter);
 

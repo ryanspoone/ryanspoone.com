@@ -14,6 +14,8 @@ import './styles/Experience.css';
 import './styles/Projects.css';
 import './styles/Contact.css';
 import './styles/Archive.css';
+import './styles/BlogPosts.css';
+import './styles/BlogPost.css';
 import * as serviceWorker from './serviceWorker';
 import App from './components/App';
 

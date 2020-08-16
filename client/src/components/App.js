@@ -9,6 +9,8 @@ import SocialSidebar from './SocialSidebar';
 import EmailSidebar from './EmailSidebar';
 import NotFound from './NotFound';
 import Archive from './Archive';
+import BlogPosts from './BlogPosts';
+import BlogPost from './BlogPost';
 
 export default class App extends Component {
     constructor(props) {
@@ -82,6 +84,8 @@ export default class App extends Component {
                 <EmailSidebar />
 
                 <Switch>
+                    <Route exact path="/blog" component={BlogPosts} />
+                    <Route path="/blog/:slug" component={BlogPost} />
                     <Route exact path="/archive" component={Archive} />
                     <Route exact path="/" component={Home} />
                     <Route component={NotFound} />

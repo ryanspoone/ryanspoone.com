@@ -8,7 +8,7 @@ const Header = props => {
     const [shouldShowShadow, setShouldShowShadow] = useState(false);
 
     const MINIMUM_SCROLL = 80;
-    const TIMEOUT_DELAY = 400;
+    const TIMEOUT_DELAY = 200;
 
     useDocumentScrollThrottled(callbackData => {
         const { previousScrollTop, currentScrollTop } = callbackData;
@@ -67,9 +67,9 @@ const Header = props => {
                         </li>
                     </ol>
                     <div>
-                        <a className="btn btn-primary" href="/blog">
+                        <NavLink className="btn btn-primary" to="/blog">
                             Blog
-                        </a>
+                        </NavLink>
                     </div>
                 </div>
             </nav>

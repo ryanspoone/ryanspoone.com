@@ -21,7 +21,10 @@ You should be able to visit the site at [http://localhost:1051](http://localhost
 Create a `.env` file in the root of this repository and add the following:
 
 ```text
+GITHUB_TOKEN=''
 SERVER_ROUTE='/api'
+GHOST_BLOG_URL=''
+GHOST_BLOG_KEY=''
 ```
 
 ## Getting setup in prod
@@ -46,7 +49,10 @@ npm run install-all
 Create a `.env` file in the root of this repository and add the following:
 
 ```text
+GITHUB_TOKEN=''
 SERVER_ROUTE='/'
+GHOST_BLOG_URL=''
+GHOST_BLOG_KEY=''
 ```
 
 Setup PM2 to run the server:

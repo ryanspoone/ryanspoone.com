@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 import _ from 'lodash';
 
 export default class BlogPost extends Component {
@@ -7,13 +8,22 @@ export default class BlogPost extends Component {
         super(props);
 
         this.state = {
-            blogPosts: {
+            blogPost: {
                 error: undefined,
+                errorCode: undefined,
                 data: undefined,
                 isLoading: true
             }
         };
     }
+
+    static propTypes = {
+        match: PropTypes.shape({
+            params: PropTypes.shape({
+                slug: PropTypes.string
+            })
+        })
+    };
 
     componentDidMount() {
         window.scrollTo(0, 0);
@@ -43,21 +53,22 @@ export default class BlogPost extends Component {
             body: JSON.stringify({ slug })
         });
         const data = await response.json();
-        console.log('ryan', data);
         if (response.status !== 200) {
             const error = _.get(data, 'error', data);
             this.setState({
-                blogPosts: {
+                blogPost: {
                     error,
+                    errorCode: response.status,
                     data: undefined,
                     isLoading: false
                 }
             });
         } else {
             this.setState({
-                blogPosts: {
+                blogPost: {
                     data,
                     error: undefined,
+                    errorCode: undefined,
                     isLoading: false
                 }
             });
@@ -65,21 +76,21 @@ export default class BlogPost extends Component {
     }
 
     render() {
-        if (_.get(this.state, 'blogPosts.isLoading')) {
+        const { slug } = _.get(this.props, 'match.params', {});
+        const { error, errorCode, data, isLoading } = _.get(this.state, 'blogPost', {});
+
+        if (isLoading) {
             return (
                 <main className="main blog-post">
-                    <header>
-                        <h1 className="big-title">Blog Post</h1>
-                    </header>
+                    <h1>{_.startCase(slug)}</h1>
                     <div className="spinner-border" role="status">
                         <span className="sr-only">Loading...</span>
                     </div>
                 </main>
             );
-        } else if (_.get(this.state, 'blogPosts.data')) {
-            const post = _.get(this.state, 'blogPosts.data');
-            const title = _.get(post, 'title');
-            const htmlBody = _.get(post, 'html');
+        } else if (data) {
+            const title = _.get(data, 'title');
+            const htmlBody = _.get(data, 'html');
             return (
                 <main className="main blog-post">
                     <h1>{title}</h1>
@@ -88,23 +99,15 @@ export default class BlogPost extends Component {
             );
         } else {
             return (
-                <main className="main blog-post">
-                    <header>
-                        <h1 className="big-title">Blog Post</h1>
-                    </header>
-                    <div className="alert alert-danger" role="alert">
-                        An error occurred: {_.get(this.props, 'error', 'Unable to determine the state.')}
-                    </div>
+                <main className="main not-found fill-height">
+                    <h1>{errorCode}</h1>
+                    <h2>{error || 'Unknown error occurred.'}</h2>
+                    <code>{slug}</code>
+                    <Link className="btn btn-primary" to="/blog">
+                        Go to Posts
+                    </Link>
                 </main>
             );
         }
     }
 }
-
-BlogPost.propTypes = {
-    match: PropTypes.shape({
-        params: PropTypes.shape({
-            slug: PropTypes.string
-        })
-    })
-};

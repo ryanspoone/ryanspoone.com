@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import _ from 'lodash';
 
 export default class Github extends Component {
     constructor(props) {
@@ -26,11 +25,13 @@ export default class Github extends Component {
     static propTypes = {
         data: PropTypes.any,
         isLoading: PropTypes.bool,
-        error: PropTypes.any
+        error: PropTypes.any,
+        errorCode: PropTypes.any
     };
 
     render() {
-        if (_.get(this.props, 'isLoading')) {
+        const { error, errorCode, data, isLoading } = this.props;
+        if (isLoading) {
             return (
                 <section id="experience" className="experience">
                     <h3 className="heading">Where I&apos;ve Worked</h3>
@@ -39,13 +40,13 @@ export default class Github extends Component {
                     </div>
                 </section>
             );
-        } else if (_.get(this.props, 'data')) {
+        } else if (data) {
             return (
                 <section id="experience" className="experience">
                     <h3 className="heading">Where I&apos;ve Worked</h3>
                     <div className="jobs">
                         <ul role="tablist" aria-label="Job tabs" className="job-tabs">
-                            {this.props.data.map((position, index) => {
+                            {data.map((position, index) => {
                                 const isSelected = this.state.selectedPosition === index;
 
                                 if (isSelected) {
@@ -179,8 +180,10 @@ export default class Github extends Component {
             return (
                 <section id="experience" className="experience">
                     <h3 className="heading">Where I&apos;ve Worked</h3>
-                    <div className="alert alert-danger" role="alert">
-                        An error occurred: {_.get(this.props, 'error', 'Unable to determine the state.')}
+                    <div className="section-error">
+                        <h2>Oh no! Something went wrong...</h2>
+                        <h4>{errorCode}</h4>
+                        <code>{error || 'Unknown error occurred.'}</code>
                     </div>
                 </section>
             );

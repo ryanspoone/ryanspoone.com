@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import _ from 'lodash';
 import { prettifyTitle } from '../utils';
 
 const GithubLink = props => {
@@ -57,11 +56,13 @@ export default class Github extends Component {
     static propTypes = {
         data: PropTypes.any,
         isLoading: PropTypes.bool,
-        error: PropTypes.any
+        error: PropTypes.any,
+        errorCode: PropTypes.any
     };
 
     render() {
-        if (_.get(this.props, 'isLoading')) {
+        const { error, errorCode, data, isLoading } = this.props;
+        if (isLoading) {
             return (
                 <section id="projects" className="projects">
                     <h3 className="heading">Some Things I&apos;ve Built</h3>
@@ -70,7 +71,7 @@ export default class Github extends Component {
                     </div>
                 </section>
             );
-        } else if (_.get(this.props, 'data')) {
+        } else if (data) {
             return (
                 <section id="projects" className="projects">
                     <h3 className="heading">Some Things I&apos;ve Built</h3>
@@ -79,7 +80,7 @@ export default class Github extends Component {
                     </Link>
                     <div className="projects-grid">
                         <div className="projects-container">
-                            {this.props.data.map((repo, index) => {
+                            {data.map((repo, index) => {
                                 return (
                                     <div tabIndex="0" key={index} className="project" data-sr-id={index}>
                                         <div className="project-inner">
@@ -122,8 +123,10 @@ export default class Github extends Component {
             return (
                 <section id="projects" className="projects">
                     <h3 className="heading">Some Things I&apos;ve Built</h3>
-                    <div className="alert alert-danger" role="alert">
-                        An error occurred: {_.get(this.props, 'error', 'Unable to determine the state.')}
+                    <div className="section-error">
+                        <h2>Oh no! Something went wrong...</h2>
+                        <h4>{errorCode}</h4>
+                        <code>{error || 'Unknown error occurred.'}</code>
                     </div>
                 </section>
             );

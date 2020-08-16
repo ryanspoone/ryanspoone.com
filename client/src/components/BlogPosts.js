@@ -34,6 +34,7 @@ export default class BlogPosts extends Component {
         this.state = {
             blogPosts: {
                 error: undefined,
+                errorCode: undefined,
                 data: undefined,
                 isLoading: true
             }
@@ -65,6 +66,7 @@ export default class BlogPosts extends Component {
             this.setState({
                 blogPosts: {
                     error,
+                    errorCode: response.status,
                     data: undefined,
                     isLoading: false
                 }
@@ -73,6 +75,7 @@ export default class BlogPosts extends Component {
             this.setState({
                 blogPosts: {
                     data,
+                    errorCode: undefined,
                     error: undefined,
                     isLoading: false
                 }
@@ -80,8 +83,16 @@ export default class BlogPosts extends Component {
         }
     }
 
+    static propTypes = {
+        location: PropTypes.shape({
+            pathname: PropTypes.string
+        })
+    };
+
     render() {
-        if (_.get(this.state, 'blogPosts.isLoading')) {
+        const location = _.get(this.props, 'location.pathname');
+        const { error, errorCode, data, isLoading } = _.get(this.state, 'blogPosts', {});
+        if (isLoading) {
             return (
                 <main className="blog-posts">
                     <header>
@@ -92,7 +103,7 @@ export default class BlogPosts extends Component {
                     </div>
                 </main>
             );
-        } else if (_.get(this.state, 'blogPosts.data')) {
+        } else if (data) {
             return (
                 <main className="blog-posts">
                     <header>
@@ -108,7 +119,7 @@ export default class BlogPosts extends Component {
                                 </tr>
                             </thead>
                             <tbody>
-                                {this.state.blogPosts.data.map((post, index) => {
+                                {data.map((post, index) => {
                                     return (
                                         <tr key={index}>
                                             <td className="overline published">
@@ -132,13 +143,13 @@ export default class BlogPosts extends Component {
             );
         } else {
             return (
-                <main className="blog-posts">
-                    <header>
-                        <h1 className="big-title">Blog Posts</h1>
-                    </header>
-                    <div className="alert alert-danger" role="alert">
-                        An error occurred: {_.get(this.props, 'error', 'Unable to determine the state.')}
-                    </div>
+                <main className="main not-found fill-height">
+                    <h1>{errorCode}</h1>
+                    <h2>{error || 'Unknown error occurred.'}</h2>
+                    <code>{location}</code>
+                    <Link className="btn btn-primary" to="/">
+                        Go Home
+                    </Link>
                 </main>
             );
         }

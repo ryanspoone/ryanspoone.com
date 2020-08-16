@@ -15,17 +15,20 @@ export default class Home extends Component {
         this.state = {
             githubUser: {
                 error: undefined,
+                errorCode: undefined,
                 data: undefined,
                 isLoading: true
             },
             githubFeatured: {
                 error: undefined,
+                errorCode: undefined,
                 data: undefined,
                 isLoading: true
             },
             linkedin: {
                 data: undefined,
                 isLoading: true,
+                errorCode: undefined,
                 error: undefined
             }
         };
@@ -36,8 +39,9 @@ export default class Home extends Component {
 
         try {
             this.getFeaturedRepos();
-            this.getUserStats();
             this.getLinkedInJobs();
+            // @TODO
+            // this.getUserStats();
         } catch (err) {
             let error = _.get(err, 'message') || _.get(err, 'error', err);
             if (_.isEmpty(error)) {
@@ -58,6 +62,7 @@ export default class Home extends Component {
             this.setState({
                 githubFeatured: {
                     error,
+                    errorCode: response.status,
                     data: undefined,
                     isLoading: false
                 }
@@ -67,6 +72,7 @@ export default class Home extends Component {
                 githubFeatured: {
                     data,
                     error: undefined,
+                    errorCode: undefined,
                     isLoading: false
                 }
             });
@@ -81,6 +87,7 @@ export default class Home extends Component {
             this.setState({
                 githubUser: {
                     error,
+                    errorCode: response.status,
                     data: undefined,
                     isLoading: false
                 }
@@ -90,6 +97,7 @@ export default class Home extends Component {
                 githubUser: {
                     data,
                     error: undefined,
+                    errorCode: undefined,
                     isLoading: false
                 }
             });
@@ -105,6 +113,7 @@ export default class Home extends Component {
                 linkedin: {
                     data: undefined,
                     error,
+                    errorCode: response.status,
                     isLoading: false
                 }
             });
@@ -113,6 +122,7 @@ export default class Home extends Component {
                 linkedin: {
                     data,
                     error: undefined,
+                    errorCode: undefined,
                     isLoading: false
                 }
             });
@@ -127,11 +137,13 @@ export default class Home extends Component {
                 <Experience
                     data={_.get(this.state, 'linkedin.data')}
                     error={_.get(this.state, 'linkedin.error')}
+                    errorCode={_.get(this.state, 'linkedin.errorCode')}
                     isLoading={_.get(this.state, 'linkedin.isLoading')}
                 />
                 <Projects
                     data={_.get(this.state, 'githubFeatured.data')}
                     error={_.get(this.state, 'githubFeatured.error')}
+                    errorCode={_.get(this.state, 'githubFeatured.errorCode')}
                     isLoading={_.get(this.state, 'githubFeatured.isLoading')}
                 />
                 <Contact />

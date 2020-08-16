@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 import _ from 'lodash';
 import { prettifyTitle } from '../utils';
 
@@ -47,6 +48,7 @@ export default class Archive extends Component {
         this.state = {
             githubRepos: {
                 error: undefined,
+                errorCode: undefined,
                 data: undefined,
                 isLoading: true
             }
@@ -93,8 +95,17 @@ export default class Archive extends Component {
         }
     }
 
+    static propTypes = {
+        location: PropTypes.shape({
+            pathname: PropTypes.string
+        })
+    };
+
     render() {
-        if (_.get(this.state, 'githubRepos.isLoading')) {
+        const location = _.get(this.props, 'location.pathname');
+        const { error, errorCode, data, isLoading } = _.get(this.state, 'githubRepos', {});
+
+        if (isLoading) {
             return (
                 <main className="archive">
                     <header>
@@ -106,7 +117,7 @@ export default class Archive extends Component {
                     </div>
                 </main>
             );
-        } else if (_.get(this.state, 'githubRepos.data')) {
+        } else if (data) {
             return (
                 <main className="archive">
                     <header>
@@ -125,7 +136,7 @@ export default class Archive extends Component {
                                 </tr>
                             </thead>
                             <tbody>
-                                {this.state.githubRepos.data.map((repo, index) => {
+                                {data.map((repo, index) => {
                                     return (
                                         <tr key={index}>
                                             <td className="overline year">
@@ -162,14 +173,13 @@ export default class Archive extends Component {
             );
         } else {
             return (
-                <main className="archive">
-                    <header>
-                        <h1 className="big-title">Archive</h1>
-                        <p className="subtitle">A big list on things I&apos;ve worked on</p>
-                    </header>
-                    <div className="alert alert-danger" role="alert">
-                        An error occurred: {_.get(this.props, 'error', 'Unable to determine the state.')}
-                    </div>
+                <main className="main not-found fill-height">
+                    <h1>{errorCode}</h1>
+                    <h2>{error || 'Unknown error occurred.'}</h2>
+                    <code>{location}</code>
+                    <Link className="btn btn-primary" to="/">
+                        Go Home
+                    </Link>
                 </main>
             );
         }

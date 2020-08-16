@@ -18,3 +18,9 @@
 .blog-post h6 {
     margin: 20px 0px;
 }
+
+.blog-post blockquote,
+.blog-post p,
+.blog-post pre {
+    margin: 0 0 2em;
+}

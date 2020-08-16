@@ -62,7 +62,7 @@ Setup PM2 to run the server:
 npm install pm2@latest -g
 
 # Load and run our server code in PM2
-pm2 start server/start.js --env production --update-env --name serve
+pm2 start server/start.js --env production --update-env --name server
 
 # Allow PM2 to automatically start
 pm2 startup

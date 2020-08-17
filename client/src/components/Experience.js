@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import ErrorMessage from './common/ErrorMessage.js';
 
 export default class Github extends Component {
     constructor(props) {
@@ -25,8 +26,8 @@ export default class Github extends Component {
     static propTypes = {
         data: PropTypes.any,
         isLoading: PropTypes.bool,
-        error: PropTypes.any,
-        errorCode: PropTypes.any
+        error: PropTypes.string,
+        errorCode: PropTypes.number
     };
 
     render() {
@@ -180,11 +181,7 @@ export default class Github extends Component {
             return (
                 <section id="experience" className="experience">
                     <h3 className="heading">Where I&apos;ve Worked</h3>
-                    <div className="section-error">
-                        <h2>Oh no! Something went wrong...</h2>
-                        <h4>{errorCode}</h4>
-                        <code>{error || 'Unknown error occurred.'}</code>
-                    </div>
+                    <ErrorMessage errorCode={errorCode} error={error} />
                 </section>
             );
         }

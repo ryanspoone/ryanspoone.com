@@ -42,6 +42,8 @@ export default class BlogPosts extends Component {
     }
 
     componentDidMount() {
+        // Make sure we are at the top of the page when
+        // this page loads.
         window.scrollTo(0, 0);
 
         try {

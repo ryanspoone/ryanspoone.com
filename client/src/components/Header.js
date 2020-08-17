@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
 import useDocumentScrollThrottled from './useDocumentScrollThrottled';
 
-const Header = props => {
+export default function Header(props) {
     const [shouldHideHeader, setShouldHideHeader] = useState(false);
     const [shouldShowShadow, setShouldShowShadow] = useState(false);
 
@@ -22,11 +22,14 @@ const Header = props => {
         }, TIMEOUT_DELAY);
     });
 
-    const shadowStyle = shouldShowShadow ? 'shadow' : '';
-    const hiddenStyle = shouldHideHeader ? 'hidden' : '';
-
     const isShowing = props.isShowing;
     const toggle = props.toggle;
+
+    // Header should only hide when the following conditions are met:
+    // - Not at top of the page
+    // - Side menu not showing (mobile only)
+    const shadowStyle = shouldShowShadow || isShowing ? 'shadow' : '';
+    const hiddenStyle = shouldHideHeader && !isShowing ? 'hidden' : '';
 
     const topOfPage = () => {
         window.scrollTo(0, 0);
@@ -110,11 +113,9 @@ const Header = props => {
             </div>
         </header>
     );
-};
+}
 
 Header.propTypes = {
     isShowing: PropTypes.bool,
     toggle: PropTypes.func
 };
-
-export default Header;

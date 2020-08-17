@@ -1,6 +1,6 @@
 .intro {
     margin: 0px auto;
-    padding: 150px 0px;
+    padding: 100px 0px;
     max-width: 1000px;
     display: flex;
     -moz-box-pack: center;
@@ -54,6 +54,11 @@
 
 @media (max-width: 48em) {
     .intro {
-        padding-top: 150px;
+        padding-top: 100px;
+    }
+
+    .intro > h2,
+    .intro > h3 {
+        font-size: 2.5rem;
     }
 }

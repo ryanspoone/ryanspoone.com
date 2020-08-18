@@ -36,3 +36,10 @@
         font-size: 2rem;
     }
 }
+
+@media (max-width: 48em) {
+    .not-found {
+        padding-left: 1em;
+        padding-right: 1em;
+    }
+}

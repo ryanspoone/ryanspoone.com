@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
+
+import '../styles/Header.css';
 import useDocumentScrollThrottled from './useDocumentScrollThrottled';
 
 export default function Header(props) {

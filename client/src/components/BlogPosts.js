@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import _ from 'lodash';
 
+import '../styles/BlogPosts.css';
+
 const PostLink = props => {
     if (!props.slug) {
         return <span></span>;

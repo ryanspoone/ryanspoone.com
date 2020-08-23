@@ -1,5 +1,7 @@
 import React from 'react';
 
+import '../styles/SocialSidebar.css';
+
 export default function SocialSidebar() {
     return (
         <div orientation="left" className="social-sidebar">

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import _ from 'lodash';
 
+import '../styles/App.css';
 import Header from './Header';
 import Home from './Home';
 import Footer from './Footer';

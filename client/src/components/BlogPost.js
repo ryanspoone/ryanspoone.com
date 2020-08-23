@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import _ from 'lodash';
 
+import '../styles/BlogPost.css';
+
 export default class BlogPost extends Component {
     constructor(props) {
         super(props);

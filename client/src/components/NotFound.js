@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import _ from 'lodash';
 
+import '../styles/NotFound.css';
+
 export default function NotFound(props) {
     return (
         <main className="main not-found fill-height">

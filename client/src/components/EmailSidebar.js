@@ -1,5 +1,7 @@
 import React from 'react';
 
+import '../styles/EmailSidebar.css';
+
 export default function EmailSidebar() {
     return (
         <div orientation="right" className="email-sidebar">

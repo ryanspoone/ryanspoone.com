@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import _ from 'lodash';
 import fetch from 'isomorphic-fetch';
 
+import '../styles/Home.css';
 import Intro from './Intro';
 import About from './About';
 import Experience from './Experience';
@@ -42,8 +43,7 @@ export default class Home extends Component {
         try {
             this.getFeaturedRepos();
             this.getLinkedInJobs();
-            // @TODO
-            // this.getUserStats();
+            this.getUserStats();
         } catch (err) {
             let error = _.get(err, 'message') || _.get(err, 'error', err);
             if (_.isEmpty(error)) {
@@ -143,10 +143,8 @@ export default class Home extends Component {
                     isLoading={_.get(this.state, 'linkedin.isLoading')}
                 />
                 <Projects
-                    data={_.get(this.state, 'githubFeatured.data')}
-                    error={_.get(this.state, 'githubFeatured.error')}
-                    errorCode={_.get(this.state, 'githubFeatured.errorCode')}
-                    isLoading={_.get(this.state, 'githubFeatured.isLoading')}
+                    githubFeatured={_.get(this.state, 'githubFeatured')}
+                    githubUser={_.get(this.state, 'githubUser')}
                 />
                 <Contact />
             </main>

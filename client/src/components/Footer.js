@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import _ from 'lodash';
 
+import '../styles/Footer.css';
+
 export default function Footer(props) {
     return (
         <footer className="foot">

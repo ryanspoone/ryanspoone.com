@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+
+import '../styles/Experience.css';
 import ErrorMessage from './common/ErrorMessage.js';
 
 export default class Github extends Component {

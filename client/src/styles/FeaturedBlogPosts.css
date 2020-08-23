@@ -102,6 +102,16 @@
     margin-right: 15px;
 }
 
+.featured-posts-grid.loading {
+    height: 800px;
+    margin: unset;
+    margin-top: 50px;
+}
+
+.featured-posts-grid .stripe {
+    height: 30%;
+}
+
 @media (max-width: 48em) {
     .featured-post-header {
         display: block;

@@ -10,6 +10,10 @@
     font-weight: lighter;
 }
 
+.github-stats .loading {
+    height: 300px;
+}
+
 .total-contribution {
     width: 40%;
     max-width: 300px;

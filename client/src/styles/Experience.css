@@ -150,6 +150,10 @@
     }
 }
 
+.experience .loading {
+    height: 300px;
+}
+
 @media (max-width: 37.5em) {
     .jobs {
         display: block;

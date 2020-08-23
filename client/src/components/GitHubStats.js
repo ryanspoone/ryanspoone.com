@@ -9,8 +9,15 @@ export default function UserStats({ error, errorCode, data, isLoading } = {}) {
     if (isLoading) {
         return (
             <div className="github-stats">
-                <div className="spinner-border" role="status">
-                    <span className="sr-only">Loading...</span>
+                <div className="loading">
+                    <div className="loading-content article">
+                        <div className="stripe medium-stripe"></div>
+
+                        <div className="stripe small-stripe"></div>
+                        <div className="stripe long-stripe"></div>
+                        <div className="stripe medium-stripe"></div>
+                        <div className="stripe long-stripe"></div>
+                    </div>
                 </div>
             </div>
         );

@@ -99,6 +99,16 @@
     margin-right: 15px;
 }
 
+.projects-grid.loading {
+    height: 800px;
+    margin: unset;
+    margin-top: 50px;
+}
+
+.projects-grid .stripe {
+    height: 30%;
+}
+
 @media (max-width: 62.5em) {
     .projects-grid .projects-container {
         grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));

@@ -33,8 +33,26 @@ export default function BlogPostList(props) {
     const { error, errorCode, data, isLoading } = props;
     if (isLoading) {
         return (
-            <div className="spinner-border" role="status">
-                <span className="sr-only">Loading...</span>
+            <div className="loading">
+                <div className="loading-content">
+                    <div className="stripe long-stripe"></div>
+                    <div className="stripe long-stripe"></div>
+                    <div className="stripe long-stripe"></div>
+                    <div className="stripe long-stripe"></div>
+                    <div className="stripe long-stripe"></div>
+                    <div className="stripe long-stripe"></div>
+                    <div className="stripe long-stripe"></div>
+                    <div className="stripe long-stripe"></div>
+                    <div className="stripe long-stripe"></div>
+                    <div className="stripe long-stripe"></div>
+                    <div className="stripe long-stripe"></div>
+                    <div className="stripe long-stripe"></div>
+                    <div className="stripe long-stripe"></div>
+                    <div className="stripe long-stripe"></div>
+                    <div className="stripe long-stripe"></div>
+                    <div className="stripe long-stripe"></div>
+                    <div className="stripe long-stripe"></div>
+                </div>
             </div>
         );
     } else if (data) {

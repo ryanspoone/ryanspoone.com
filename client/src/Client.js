@@ -18,12 +18,12 @@ export default class Client {
         try {
             response = JSON.parse(response);
         } catch (e) {
-            console.warn('Unexpected data type returned from local storage.', response);
+            console.warn('Unexpected data type returned from local storage.', { key, response });
         }
         const expiresAt = _.get(response, 'conditions.expiresAt');
         const data = _.get(response, 'data');
 
-        if (currentTimeDate >= expiresAt) {
+        if (currentTimeDate >= new Date(expiresAt).toISOString()) {
             return;
         }
         return data;
@@ -47,7 +47,7 @@ export default class Client {
                 })
             );
         } catch (error) {
-            console.warn('Unable to store data in local storage.', { error });
+            console.warn('Unable to store data in local storage.', { key, data, error });
             localStorage.removeItem(key);
         }
     }

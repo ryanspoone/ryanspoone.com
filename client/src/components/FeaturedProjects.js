@@ -10,8 +10,12 @@ import ExternalLink from './common/ExternalLink.js';
 export default function FeaturedProjects({ error, errorCode, data, isLoading } = {}) {
     if (isLoading) {
         return (
-            <div className="spinner-border" role="status">
-                <span className="sr-only">Loading...</span>
+            <div className="projects-grid loading">
+                <div className="loading-content article">
+                    <div className="stripe long-stripe"></div>
+                    <div className="stripe long-stripe"></div>
+                    <div className="stripe long-stripe"></div>
+                </div>
             </div>
         );
     } else if (data) {

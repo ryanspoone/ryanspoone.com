@@ -64,8 +64,26 @@ export default class Archive extends Component {
                         <h1 className="big-title">Archive</h1>
                         <p className="subtitle">A big list on things I&apos;ve worked on</p>
                     </header>
-                    <div className="spinner-border" role="status">
-                        <span className="sr-only">Loading...</span>
+                    <div className="loading">
+                        <div className="loading-content">
+                            <div className="stripe long-stripe"></div>
+                            <div className="stripe long-stripe"></div>
+                            <div className="stripe long-stripe"></div>
+                            <div className="stripe long-stripe"></div>
+                            <div className="stripe long-stripe"></div>
+                            <div className="stripe long-stripe"></div>
+                            <div className="stripe long-stripe"></div>
+                            <div className="stripe long-stripe"></div>
+                            <div className="stripe long-stripe"></div>
+                            <div className="stripe long-stripe"></div>
+                            <div className="stripe long-stripe"></div>
+                            <div className="stripe long-stripe"></div>
+                            <div className="stripe long-stripe"></div>
+                            <div className="stripe long-stripe"></div>
+                            <div className="stripe long-stripe"></div>
+                            <div className="stripe long-stripe"></div>
+                            <div className="stripe long-stripe"></div>
+                        </div>
                     </div>
                 </main>
             );

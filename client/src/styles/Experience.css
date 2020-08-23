@@ -161,6 +161,12 @@
         margin-bottom: 30px;
         width: calc(100% + 100px);
         margin-left: -50px;
+        -ms-overflow-style: none; /* IE and Edge */
+        scrollbar-width: none; /* Firefox */
+    }
+
+    .job-tabs::-webkit-scrollbar {
+        display: none;
     }
 
     .job-tabs li:first-of-type {
@@ -199,6 +205,12 @@
     .job-tabs {
         width: calc(100% + 50px);
         margin-left: -25px;
+        -ms-overflow-style: none; /* IE and Edge */
+        scrollbar-width: none; /* Firefox */
+    }
+
+    .job-tabs::-webkit-scrollbar {
+        display: none;
     }
 
     .job-tabs li:first-of-type {

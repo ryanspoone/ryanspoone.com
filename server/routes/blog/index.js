@@ -15,12 +15,15 @@ const BlogAPI = new GhostContentAPI({
 const ALL_POSTS_DEFAULTS = {
     fields: ['slug', 'id', 'title', 'featured', 'published_at', 'feature_image', 'reading_time', 'excerpt'],
     limit: 'all',
-    filter: 'visibility:public'
+    filter: 'visibility:public+featured:false'
 };
 
 const FEATURED_POSTS_DEFAULTS = {
-    fields: ['slug', 'id', 'title', 'featured', 'published_at', 'feature_image', 'reading_time', 'excerpt'],
+    // @FIXME: For some reason, when filtering by fields, it won't return certain fields like reading
+    // time and excerpt.
+    // fields: ['slug', 'id', 'title', 'featured', 'published_at', 'feature_image', 'reading_time', 'excerpt'],
     limit: 'all',
+    include: ['tags'],
     filter: 'visibility:public+featured:true'
 };
 

@@ -4,6 +4,8 @@ import PropTypes from 'prop-types';
 import _ from 'lodash';
 
 import '../styles/BlogPosts.css';
+import BlogPostList from './BlogPostList.js';
+import FeaturedBlogPosts from './FeaturedBlogPosts.js';
 
 const PostLink = props => {
     if (!props.slug) {
@@ -39,6 +41,12 @@ export default class BlogPosts extends Component {
                 errorCode: undefined,
                 data: undefined,
                 isLoading: true
+            },
+            featuredPosts: {
+                error: undefined,
+                errorCode: undefined,
+                data: undefined,
+                isLoading: true
             }
         };
     }
@@ -49,6 +57,7 @@ export default class BlogPosts extends Component {
         window.scrollTo(0, 0);
 
         try {
+            this.getFeaturedPosts();
             this.getPosts();
         } catch (err) {
             let error = _.get(err, 'message') || _.get(err, 'error', err);
@@ -59,6 +68,31 @@ export default class BlogPosts extends Component {
                 error = JSON.stringify(error);
             }
             console.error('Thrown error from server:', error);
+        }
+    }
+
+    async getFeaturedPosts() {
+        const response = await fetch('/api/blog/featured');
+        const data = await response.json();
+        if (response.status !== 200) {
+            const error = _.get(data, 'error', data);
+            this.setState({
+                featuredPosts: {
+                    error,
+                    errorCode: response.status,
+                    data: undefined,
+                    isLoading: false
+                }
+            });
+        } else {
+            this.setState({
+                featuredPosts: {
+                    data,
+                    errorCode: undefined,
+                    error: undefined,
+                    isLoading: false
+                }
+            });
         }
     }
 
@@ -87,75 +121,25 @@ export default class BlogPosts extends Component {
         }
     }
 
-    static propTypes = {
-        location: PropTypes.shape({
-            pathname: PropTypes.string
-        })
-    };
-
     render() {
-        const location = _.get(this.props, 'location.pathname');
-        const { error, errorCode, data, isLoading } = _.get(this.state, 'blogPosts', {});
-        if (isLoading) {
-            return (
-                <main className="blog-posts">
-                    <header>
-                        <h1 className="big-title">Blog Posts</h1>
-                    </header>
-                    <div className="spinner-border" role="status">
-                        <span className="sr-only">Loading...</span>
-                    </div>
-                </main>
-            );
-        } else if (data) {
-            return (
-                <main className="blog-posts">
-                    <header>
-                        <h1 className="big-title">Blog Posts</h1>
-                    </header>
-                    <div className="blog-posts-container">
-                        <table className="blog-posts-table">
-                            <thead>
-                                <tr>
-                                    <th>Published</th>
-                                    <th>Title</th>
-                                    <th></th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {data.map((post, index) => {
-                                    return (
-                                        <tr key={index}>
-                                            <td className="overline published">
-                                                {new Date(post.published_at).toLocaleDateString()}
-                                            </td>
-                                            <td className="title">
-                                                <PostLink slug={post.slug} title={post.title} />
-                                            </td>
-                                            <td className="links">
-                                                <span>
-                                                    <PostLink slug={post.slug} />
-                                                </span>
-                                            </td>
-                                        </tr>
-                                    );
-                                }, this)}
-                            </tbody>
-                        </table>
-                    </div>
-                </main>
-            );
-        } else {
-            return (
-                <main className="main not-found fill-height">
-                    <h1>{errorCode}</h1>
-                    <h2>{error || 'Unknown error occurred.'}</h2>
-                    <code>{location}</code>
-                    <Link className="btn btn-primary" to="/">
-                        Go Home
-                    </Link>
-                </main>
-            );
-        }
+        return (
+            <main className="blog-posts">
+                <header>
+                    <h1 className="big-title">Blog Posts</h1>
+                </header>
+                <FeaturedBlogPosts
+                    data={_.get(this.state, 'featuredPosts.data')}
+                    error={_.get(this.state, 'featuredPosts.error')}
+                    errorCode={_.get(this.state, 'featuredPosts.errorCode')}
+                    isLoading={_.get(this.state, 'featuredPosts.isLoading')}
+                />
+                <BlogPostList
+                    data={_.get(this.state, 'blogPosts.data')}
+                    error={_.get(this.state, 'blogPosts.error')}
+                    errorCode={_.get(this.state, 'blogPosts.errorCode')}
+                    isLoading={_.get(this.state, 'blogPosts.isLoading')}
+                />
+            </main>
+        );
     }
 }

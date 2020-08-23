@@ -9,8 +9,8 @@ export default function Header(props) {
     const [shouldHideHeader, setShouldHideHeader] = useState(false);
     const [shouldShowShadow, setShouldShowShadow] = useState(false);
 
-    const MINIMUM_SCROLL = 80;
-    const TIMEOUT_DELAY = 200;
+    const MINIMUM_SCROLL = 100;
+    const TIMEOUT_DELAY = 400;
 
     useDocumentScrollThrottled(callbackData => {
         const { previousScrollTop, currentScrollTop } = callbackData;

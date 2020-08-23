@@ -123,6 +123,7 @@
         font-size: 14px;
     }
 }
+
 @media (max-width: 48em) {
     .archive {
         padding: 0px 50px;
@@ -153,5 +154,9 @@
 
     .archive-table .hide-on-mobile {
         display: none;
+    }
+
+    .project-link {
+        padding: 0;
     }
 }

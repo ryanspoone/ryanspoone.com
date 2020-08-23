@@ -4,13 +4,16 @@ import { Link } from 'react-router-dom';
 import _ from 'lodash';
 
 import '../styles/Archive.css';
-import { prettifyTitle } from '../utils';
+import Client from '../Client.js';
+import { prettifyTitle } from '../utils.js';
 import GitHubLink from './common/GitHubLink.js';
 import ExternalLink from './common/ExternalLink.js';
 
 export default class Archive extends Component {
     constructor(props) {
         super(props);
+
+        this.client = new Client();
 
         this.state = {
             githubRepos: {
@@ -40,26 +43,8 @@ export default class Archive extends Component {
     }
 
     async getRepos() {
-        const response = await fetch('/api/github/repositories');
-        const data = await response.json();
-        if (response.status !== 200) {
-            const error = _.get(data, 'error', data);
-            this.setState({
-                githubRepos: {
-                    error,
-                    data: undefined,
-                    isLoading: false
-                }
-            });
-        } else {
-            this.setState({
-                githubRepos: {
-                    data,
-                    error: undefined,
-                    isLoading: false
-                }
-            });
-        }
+        const data = await this.client.fetchRequest('/api/github/repositories', 'githubRepos');
+        this.setState(data);
     }
 
     static propTypes = {

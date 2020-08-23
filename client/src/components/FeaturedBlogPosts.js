@@ -22,13 +22,7 @@ export default function BlogPostList(props) {
                 <div className="featured-posts-container">
                     {data.map((post, index) => {
                         return (
-                            <Link
-                                tabIndex="0"
-                                key={index}
-                                className="featured-post"
-                                data-sr-id={index}
-                                to={`/blog/${post.slug}`}
-                            >
+                            <Link key={index} className="featured-post" to={`/blog/${post.slug}`}>
                                 <div className="featured-post-inner">
                                     <header>
                                         <div className="featured-post-header">
@@ -44,12 +38,9 @@ export default function BlogPostList(props) {
                                     </header>
                                     <footer>
                                         <ul className="featured-post-tags">
-                                            {_.get(post, 'tags', []).map((tag, index) => {
-                                                if (index > 2) {
-                                                    return;
-                                                }
-                                                return <li key={index}>{tag.name}</li>;
-                                            })}
+                                            {post.tags.map((tag, index) => (
+                                                <li key={index}>{tag.name}</li>
+                                            ))}
                                         </ul>
                                     </footer>
                                 </div>

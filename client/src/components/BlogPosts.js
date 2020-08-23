@@ -6,6 +6,7 @@ import _ from 'lodash';
 import '../styles/BlogPosts.css';
 import BlogPostList from './BlogPostList.js';
 import FeaturedBlogPosts from './FeaturedBlogPosts.js';
+import Client from '../Client.js';
 
 const PostLink = props => {
     if (!props.slug) {
@@ -34,6 +35,8 @@ PostLink.propTypes = {
 export default class BlogPosts extends Component {
     constructor(props) {
         super(props);
+
+        this.client = new Client();
 
         this.state = {
             blogPosts: {
@@ -72,53 +75,13 @@ export default class BlogPosts extends Component {
     }
 
     async getFeaturedPosts() {
-        const response = await fetch('/api/blog/featured');
-        const data = await response.json();
-        if (response.status !== 200) {
-            const error = _.get(data, 'error', data);
-            this.setState({
-                featuredPosts: {
-                    error,
-                    errorCode: response.status,
-                    data: undefined,
-                    isLoading: false
-                }
-            });
-        } else {
-            this.setState({
-                featuredPosts: {
-                    data,
-                    errorCode: undefined,
-                    error: undefined,
-                    isLoading: false
-                }
-            });
-        }
+        const data = await this.client.fetchRequest('/api/blog/featured', 'featuredPosts');
+        this.setState(data);
     }
 
     async getPosts() {
-        const response = await fetch('/api/blog');
-        const data = await response.json();
-        if (response.status !== 200) {
-            const error = _.get(data, 'error', data);
-            this.setState({
-                blogPosts: {
-                    error,
-                    errorCode: response.status,
-                    data: undefined,
-                    isLoading: false
-                }
-            });
-        } else {
-            this.setState({
-                blogPosts: {
-                    data,
-                    errorCode: undefined,
-                    error: undefined,
-                    isLoading: false
-                }
-            });
-        }
+        const data = await this.client.fetchRequest('/api/blog', 'blogPosts');
+        this.setState(data);
     }
 
     render() {

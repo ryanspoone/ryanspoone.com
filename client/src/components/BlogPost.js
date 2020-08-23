@@ -4,10 +4,13 @@ import { Link } from 'react-router-dom';
 import _ from 'lodash';
 
 import '../styles/BlogPost.css';
+import Client from '../Client.js';
 
 export default class BlogPost extends Component {
     constructor(props) {
         super(props);
+
+        this.client = new Client();
 
         this.state = {
             blogPost: {
@@ -48,40 +51,14 @@ export default class BlogPost extends Component {
 
     async getPosts() {
         const { slug } = _.get(this.props, 'match.params', {});
-        const response = await fetch('/api/blog/post', {
-            headers: {
-                Accept: 'application/json',
-                'Content-Type': 'application/json'
-            },
-            method: 'POST',
-            body: JSON.stringify({ slug })
-        });
-        const data = await response.json();
-        if (response.status !== 200) {
-            const error = _.get(data, 'error', data);
-            this.setState({
-                blogPost: {
-                    error,
-                    errorCode: response.status,
-                    data: undefined,
-                    isLoading: false
-                }
-            });
-        } else {
-            this.setState({
-                blogPost: {
-                    data,
-                    error: undefined,
-                    errorCode: undefined,
-                    isLoading: false
-                }
-            });
-        }
+        const body = JSON.stringify({ slug });
+        const data = await this.client.fetchRequest('/api/blog/post', 'blogPost', { body });
+        this.setState(data);
     }
 
     render() {
         const { slug } = _.get(this.props, 'match.params', {});
-        const { error, errorCode, data, isLoading } = _.get(this.state, 'blogPost', {});
+        const { error, errorCode, data, isLoading } = this.state.blogPost;
 
         if (isLoading) {
             return (

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
 
 import '../styles/Header.css';
-import useDocumentScrollThrottled from './useDocumentScrollThrottled';
+import { useDocumentScrollThrottled } from '../utils.js';
 
 export default function Header(props) {
     const [shouldHideHeader, setShouldHideHeader] = useState(false);

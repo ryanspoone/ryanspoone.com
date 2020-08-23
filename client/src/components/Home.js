@@ -1,17 +1,19 @@
 import React, { Component } from 'react';
 import _ from 'lodash';
-import fetch from 'isomorphic-fetch';
 
 import '../styles/Home.css';
-import Intro from './Intro';
-import About from './About';
-import Experience from './Experience';
-import Projects from './Projects';
-import Contact from './Contact';
+import Client from '../Client.js';
+import Intro from './Intro.js';
+import About from './About.js';
+import Experience from './Experience.js';
+import Projects from './Projects.js';
+import Contact from './Contact.js';
 
 export default class Home extends Component {
     constructor(props) {
         super(props);
+
+        this.client = new Client();
 
         this.state = {
             githubUser: {
@@ -57,78 +59,18 @@ export default class Home extends Component {
     }
 
     async getFeaturedRepos() {
-        const response = await fetch('/api/github/featured');
-        const data = await response.json();
-        if (response.status !== 200) {
-            const error = _.get(data, 'error', data);
-            this.setState({
-                githubFeatured: {
-                    error,
-                    errorCode: response.status,
-                    data: undefined,
-                    isLoading: false
-                }
-            });
-        } else {
-            this.setState({
-                githubFeatured: {
-                    data,
-                    error: undefined,
-                    errorCode: undefined,
-                    isLoading: false
-                }
-            });
-        }
+        const data = await this.client.fetchRequest('/api/github/featured', 'githubFeatured');
+        this.setState(data);
     }
 
     async getUserStats() {
-        const response = await fetch('/api/github/stats');
-        const data = await response.json();
-        if (response.status !== 200) {
-            const error = _.get(data, 'error', data);
-            this.setState({
-                githubUser: {
-                    error,
-                    errorCode: response.status,
-                    data: undefined,
-                    isLoading: false
-                }
-            });
-        } else {
-            this.setState({
-                githubUser: {
-                    data,
-                    error: undefined,
-                    errorCode: undefined,
-                    isLoading: false
-                }
-            });
-        }
+        const data = await this.client.fetchRequest('/api/github/stats', 'githubUser');
+        this.setState(data);
     }
 
     async getLinkedInJobs() {
-        const response = await fetch('/api/linkedin');
-        const data = await response.json();
-        if (response.status !== 200) {
-            const error = _.get(data, 'error', data);
-            this.setState({
-                linkedin: {
-                    data: undefined,
-                    error,
-                    errorCode: response.status,
-                    isLoading: false
-                }
-            });
-        } else {
-            this.setState({
-                linkedin: {
-                    data,
-                    error: undefined,
-                    errorCode: undefined,
-                    isLoading: false
-                }
-            });
-        }
+        const data = await this.client.fetchRequest('/api/linkedin', 'linkedin');
+        this.setState(data);
     }
 
     render() {

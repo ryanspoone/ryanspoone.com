@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import '../styles/FeaturedProjects.css';
-import { prettifyTitle } from '../utils';
+import { prettifyTitle } from '../utils.js';
 import ErrorMessage from './common/ErrorMessage.js';
 import GitHubLink from './common/GitHubLink.js';
 import ExternalLink from './common/ExternalLink.js';

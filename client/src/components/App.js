@@ -3,27 +3,29 @@ import { Route, Switch } from 'react-router-dom';
 import _ from 'lodash';
 
 import '../styles/App.css';
-import Header from './Header';
-import Home from './Home';
-import Footer from './Footer';
-import SocialSidebar from './SocialSidebar';
-import EmailSidebar from './EmailSidebar';
-import NotFound from './NotFound';
-import Archive from './Archive';
-import BlogPosts from './BlogPosts';
-import BlogPost from './BlogPost';
+import Client from '../Client.js';
+import Header from './Header.js';
+import Home from './Home.js';
+import Footer from './Footer.js';
+import SocialSidebar from './SocialSidebar.js';
+import EmailSidebar from './EmailSidebar.js';
+import NotFound from './NotFound.js';
+import Archive from './Archive.js';
+import BlogPosts from './BlogPosts.js';
+import BlogPost from './BlogPost.js';
 
 export default class App extends Component {
     constructor(props) {
         super(props);
 
+        this.client = new Client();
+
         this.state = {
-            github: {
-                repo: {
-                    error: undefined,
-                    data: undefined,
-                    isLoading: true
-                }
+            githubRepo: {
+                error: undefined,
+                errorCode: undefined,
+                data: undefined,
+                isLoading: true
             },
             isMenuShowing: false
         };
@@ -55,26 +57,8 @@ export default class App extends Component {
     }
 
     async getRepoStats() {
-        const response = await fetch('/api/github');
-        const data = await response.json();
-        if (response.status !== 200) {
-            const error = _.get(data, 'error', data);
-            this.setState({
-                githubRepo: {
-                    error,
-                    data: undefined,
-                    isLoading: false
-                }
-            });
-        } else {
-            this.setState({
-                githubRepo: {
-                    data,
-                    error: undefined,
-                    isLoading: false
-                }
-            });
-        }
+        const data = await this.client.fetchRequest('/api/github', 'githubRepo');
+        this.setState(data);
     }
 
     render() {

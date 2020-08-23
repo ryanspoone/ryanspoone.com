@@ -11,11 +11,6 @@ export default function About() {
                     <div>
                         <p>Hello! I&apos;m Ryan, a software engineer based in Austin, TX.</p>
                         <p>
-                            I enjoy creating things that live on the internet, whether that be websites,
-                            applications, or anything in between. My goal is to always build products that
-                            provide pixel-perfect, performant experiences.
-                        </p>
-                        <p>
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
                             incididunt ut labore et dolore magna aliqua. Consectetur adipiscing elit ut
                             aliquam. Gravida cum sociis natoque penatibus et magnis dis parturient montes.

@@ -7,11 +7,13 @@ export default function Intro() {
         <section id="intro" className="intro">
             <h1 className="overline">Hi, my name is</h1>
             <h2 className="title">Ryan Spoone.</h2>
-            <h3 className="subtitle">I love to build cool things.</h3>
+            <h3 className="subtitle">Let&apos;s build something together.</h3>
             <div className="description">
                 <p>
-                    I&apos;m a software engineer based in Austin, TX specializing in designing and building
-                    exceptional applications, websites, and everything in-between.
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                    ut labore et dolore magna aliqua. Consectetur adipiscing elit ut aliquam. Gravida cum
+                    sociis natoque penatibus et magnis dis parturient montes. Nibh mauris cursus mattis
+                    molestie a iaculis at erat.
                 </p>
             </div>
             <div>

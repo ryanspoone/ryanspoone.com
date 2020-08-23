@@ -17,7 +17,6 @@ export default function BlogPostList(props) {
         if (_.isEmpty(data)) {
             return <span></span>;
         }
-        console.log(data);
         return (
             <div className="featured-posts-grid">
                 <div className="featured-posts-container">

@@ -23,9 +23,14 @@ export default class Client {
         const expiresAt = _.get(response, 'conditions.expiresAt');
         const data = _.get(response, 'data');
 
+        if (_.isNil(data) || _.isNil(expiresAt)) {
+            return;
+        }
+
         if (currentTimeDate >= new Date(expiresAt).toISOString()) {
             return;
         }
+
         return data;
     }
 

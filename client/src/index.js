@@ -12,5 +12,5 @@ render(
     document.getElementById('root')
 );
 
-// Change to .register() to use it.
-serviceWorker.unregister();
+// Change to .unregister() to disable it.
+serviceWorker.register();

@@ -10,10 +10,8 @@ export default function Intro() {
             <h3 className="subtitle">Let&apos;s build something together.</h3>
             <div className="description">
                 <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                    ut labore et dolore magna aliqua. Consectetur adipiscing elit ut aliquam. Gravida cum
-                    sociis natoque penatibus et magnis dis parturient montes. Nibh mauris cursus mattis
-                    molestie a iaculis at erat.
+                    I&apos;m a software engineer based in Austin, TX specializing in building performant and
+                    scalable websites, applications, and everything in between.
                 </p>
             </div>
             <div>

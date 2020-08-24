@@ -11,17 +11,14 @@ export default function About() {
                     <div>
                         <p>Hello! I&apos;m Ryan, a software engineer based in Austin, TX.</p>
                         <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                            incididunt ut labore et dolore magna aliqua. Consectetur adipiscing elit ut
-                            aliquam. Gravida cum sociis natoque penatibus et magnis dis parturient montes.
-                            Nibh mauris cursus mattis molestie a iaculis at erat. Praesent elementum facilisis
-                            leo vel fringilla est. Mauris cursus mattis molestie a iaculis at erat
-                            pellentesque. Turpis cursus in hac habitasse platea dictumst quisque sagittis
-                            purus. Quam adipiscing vitae proin sagittis nisl rhoncus mattis. Etiam erat velit
-                            scelerisque in dictum non. Viverra nibh cras pulvinar mattis nunc sed blandit
-                            libero volutpat. In tellus integer feugiat scelerisque varius morbi enim nunc.
-                            Nulla aliquet enim tortor at auctor urna nunc id. Lectus quam id leo in vitae
-                            turpis.
+                            I am not a purist when it comes to programming languages; however, currently, I
+                            mainly work with JavaScript (Node.js). I love what I do, and adore the creative
+                            process; it is addictive and can give never ending possibilities. Although I
+                            mainly work professionally on back-end code, I do thoroughly enjoy the front-end
+                            side of things. It&apos;s ever evolving and there is always something new to
+                            learn. When not working professionally, I thoroughly enjoy getting to create and
+                            spend time on personal projects, whether thats a new project I am lifting off the
+                            ground or helping a friend with their work.
                         </p>
                         <p>Here are a few technologies I&apos;ve been working with recently:</p>
                         <ul className="skills">

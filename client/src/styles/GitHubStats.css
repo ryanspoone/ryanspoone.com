@@ -46,7 +46,7 @@
     position: relative;
     padding-left: 30px;
     margin-bottom: 10px;
-    font-weight: 200;
+    font-weight: 300;
 }
 
 .stat-amount {
@@ -63,15 +63,13 @@
 
 @media (max-width: 48em) {
     .github-stats {
+        margin: 0 auto;
         display: block;
-    }
-
-    .total-contribution {
-        width: 100%;
     }
 
     .total-contribution,
     .contribution-breakdown {
+        width: 100%;
         margin: 50px auto;
     }
 }

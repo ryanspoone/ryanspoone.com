@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import _ from 'lodash';
+import get from 'lodash/get';
+import isEmpty from 'lodash/isEmpty';
+import isString from 'lodash/isString';
+import size from 'lodash/size';
 
 import '../styles/Archive.css';
 import Client from '../Client.js';
@@ -31,11 +34,11 @@ export default class Archive extends Component {
         try {
             this.getRepos();
         } catch (err) {
-            let error = _.get(err, 'message') || _.get(err, 'error', err);
-            if (_.isEmpty(error)) {
+            let error = get(err, 'message') || get(err, 'error', err);
+            if (isEmpty(error)) {
                 error = 'An error status was returned but no error message.';
             }
-            if (!_.isString(error)) {
+            if (!isString(error)) {
                 error = JSON.stringify(error);
             }
             console.error('Thrown error from server:', error);
@@ -54,8 +57,8 @@ export default class Archive extends Component {
     };
 
     render() {
-        const location = _.get(this.props, 'location.pathname');
-        const { error, errorCode, data, isLoading } = _.get(this.state, 'githubRepos', {});
+        const location = get(this.props, 'location.pathname');
+        const { error, errorCode, data, isLoading } = get(this.state, 'githubRepos', {});
 
         if (isLoading) {
             return (
@@ -116,7 +119,7 @@ export default class Archive extends Component {
                                             <td className="language hide-on-mobile">{repo.language}</td>
                                             <td className="tech hide-on-mobile">
                                                 {repo.repositoryTopics.map((tech, idx) => {
-                                                    if (idx === _.size(repo.repositoryTopics) - 1) {
+                                                    if (idx === size(repo.repositoryTopics) - 1) {
                                                         return <span key={idx}>{tech}</span>;
                                                     }
                                                     return (

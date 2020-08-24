@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import _ from 'lodash';
+import get from 'lodash/get';
+import isEmpty from 'lodash/isEmpty';
+import isString from 'lodash/isString';
 
 import '../styles/BlogPost.css';
 import Client from '../Client.js';
@@ -38,11 +40,11 @@ export default class BlogPost extends Component {
         try {
             this.getPosts();
         } catch (err) {
-            let error = _.get(err, 'message') || _.get(err, 'error', err);
-            if (_.isEmpty(error)) {
+            let error = get(err, 'message') || get(err, 'error', err);
+            if (isEmpty(error)) {
                 error = 'An error status was returned but no error message.';
             }
-            if (!_.isString(error)) {
+            if (!isString(error)) {
                 error = JSON.stringify(error);
             }
             console.error('Thrown error from server:', error);
@@ -50,14 +52,14 @@ export default class BlogPost extends Component {
     }
 
     async getPosts() {
-        const { slug } = _.get(this.props, 'match.params', {});
+        const { slug } = get(this.props, 'match.params', {});
         const body = JSON.stringify({ slug });
         const data = await this.client.fetchRequest('/api/blog/post', 'blogPost', { body });
         this.setState(data);
     }
 
     render() {
-        const { slug } = _.get(this.props, 'match.params', {});
+        const { slug } = get(this.props, 'match.params', {});
         const { error, errorCode, data, isLoading } = this.state.blogPost;
 
         if (isLoading) {
@@ -79,8 +81,8 @@ export default class BlogPost extends Component {
                 </main>
             );
         } else if (data) {
-            const title = _.get(data, 'title');
-            const htmlBody = _.get(data, 'html');
+            const title = get(data, 'title');
+            const htmlBody = get(data, 'html');
             return (
                 <main className="main blog-post">
                     <h1>{title}</h1>

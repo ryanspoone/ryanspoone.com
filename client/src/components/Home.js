@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import _ from 'lodash';
+import get from 'lodash/get';
+import isEmpty from 'lodash/isEmpty';
+import isString from 'lodash/isString';
 
 import '../styles/Home.css';
 import Client from '../Client.js';
@@ -47,11 +49,11 @@ export default class Home extends Component {
             this.getLinkedInJobs();
             this.getUserStats();
         } catch (err) {
-            let error = _.get(err, 'message') || _.get(err, 'error', err);
-            if (_.isEmpty(error)) {
+            let error = get(err, 'message') || get(err, 'error', err);
+            if (isEmpty(error)) {
                 error = 'An error status was returned but no error message.';
             }
-            if (!_.isString(error)) {
+            if (!isString(error)) {
                 error = JSON.stringify(error);
             }
             console.error('Thrown error from server:', error);
@@ -79,14 +81,14 @@ export default class Home extends Component {
                 <Intro />
                 <About />
                 <Experience
-                    data={_.get(this.state, 'linkedin.data')}
-                    error={_.get(this.state, 'linkedin.error')}
-                    errorCode={_.get(this.state, 'linkedin.errorCode')}
-                    isLoading={_.get(this.state, 'linkedin.isLoading')}
+                    data={get(this.state, 'linkedin.data')}
+                    error={get(this.state, 'linkedin.error')}
+                    errorCode={get(this.state, 'linkedin.errorCode')}
+                    isLoading={get(this.state, 'linkedin.isLoading')}
                 />
                 <Projects
-                    githubFeatured={_.get(this.state, 'githubFeatured')}
-                    githubUser={_.get(this.state, 'githubUser')}
+                    githubFeatured={get(this.state, 'githubFeatured')}
+                    githubUser={get(this.state, 'githubUser')}
                 />
                 <Contact />
             </main>

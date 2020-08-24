@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import _ from 'lodash';
+import startCase from 'lodash/startCase';
+import pick from 'lodash/pick';
+import map from 'lodash/map';
 
 import '../styles/GitHubStats.css';
 import ErrorMessage from './common/ErrorMessage.js';
@@ -22,17 +24,16 @@ export default function UserStats({ error, errorCode, data, isLoading } = {}) {
             </div>
         );
     } else if (data) {
-        const drilledDownStats = _(data)
-            .pick([
-                'commitContributions',
-                'pullRequestContributions',
-                'pullRequestReviewContributions',
-                'repositoriesContributedTo',
-                'repositoriesWithContributedCommits',
-                'repositoriesWithContributedPullRequests'
-            ])
-            .map((value, key) => [key, value])
-            .value();
+        let drilledDownStats = pick(data, [
+            'commitContributions',
+            'pullRequestContributions',
+            'pullRequestReviewContributions',
+            'repositoriesContributedTo',
+            'repositoriesWithContributedCommits',
+            'repositoriesWithContributedPullRequests'
+        ]);
+        drilledDownStats = map(drilledDownStats, (value, key) => [key, value]);
+
         const { totalYearContributions } = data;
         return (
             <div className="github-stats">
@@ -46,7 +47,7 @@ export default function UserStats({ error, errorCode, data, isLoading } = {}) {
                             const [name, value] = stat;
                             return (
                                 <li key={name}>
-                                    <span className="stat-amount">{value}</span> {_.startCase(name)}
+                                    <span className="stat-amount">{value}</span> {startCase(name)}
                                 </li>
                             );
                         }, this)}

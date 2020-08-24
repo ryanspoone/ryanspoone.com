@@ -1,4 +1,5 @@
-import _ from 'lodash';
+import get from 'lodash/get';
+import isNil from 'lodash/isNil';
 import fetch from 'isomorphic-fetch';
 
 const ONE_MINUTE = 60000;
@@ -20,10 +21,10 @@ export default class Client {
         } catch (e) {
             console.warn('Unexpected data type returned from local storage.', { key, response });
         }
-        const expiresAt = _.get(response, 'conditions.expiresAt');
-        const data = _.get(response, 'data');
+        const expiresAt = get(response, 'conditions.expiresAt');
+        const data = get(response, 'data');
 
-        if (_.isNil(data) || _.isNil(expiresAt)) {
+        if (isNil(data) || isNil(expiresAt)) {
             return;
         }
 
@@ -60,13 +61,13 @@ export default class Client {
     async fetchRequest(url, key, options) {
         if (this.useLocalStorage) {
             const cache = this.getDataFromCache(key);
-            if (!_.isNil(cache)) {
+            if (!isNil(cache)) {
                 return cache;
             }
             localStorage.removeItem(key);
         }
 
-        const body = _.get(options, 'body');
+        const body = get(options, 'body');
 
         let response;
         if (body) {
@@ -86,7 +87,7 @@ export default class Client {
         let error = undefined;
         let errorCode = undefined;
         if (response.status !== 200) {
-            error = _.get(data, 'error', data);
+            error = get(data, 'error', data);
             errorCode = response.status;
             data = undefined;
         }

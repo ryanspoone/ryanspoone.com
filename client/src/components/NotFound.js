@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import _ from 'lodash';
+import get from 'lodash/get';
 
 import '../styles/NotFound.css';
 
@@ -10,7 +10,7 @@ export default function NotFound(props) {
         <main className="main not-found fill-height">
             <h1>404</h1>
             <h2>Page Not Found</h2>
-            <code>{_.get(props, 'location.pathname')}</code>
+            <code>{get(props, 'location.pathname')}</code>
             <Link className="btn btn-primary" to="/">
                 Go Home
             </Link>

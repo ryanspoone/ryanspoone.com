@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import _ from 'lodash';
+import get from 'lodash/get';
+import isEmpty from 'lodash/isEmpty';
+import isString from 'lodash/isString';
 
 import '../styles/BlogPosts.css';
 import BlogPostList from './BlogPostList.js';
@@ -63,11 +65,11 @@ export default class BlogPosts extends Component {
             this.getFeaturedPosts();
             this.getPosts();
         } catch (err) {
-            let error = _.get(err, 'message') || _.get(err, 'error', err);
-            if (_.isEmpty(error)) {
+            let error = get(err, 'message') || get(err, 'error', err);
+            if (isEmpty(error)) {
                 error = 'An error status was returned but no error message.';
             }
-            if (!_.isString(error)) {
+            if (!isString(error)) {
                 error = JSON.stringify(error);
             }
             console.error('Thrown error from server:', error);
@@ -91,16 +93,16 @@ export default class BlogPosts extends Component {
                     <h1 className="big-title">Blog Posts</h1>
                 </header>
                 <FeaturedBlogPosts
-                    data={_.get(this.state, 'featuredPosts.data')}
-                    error={_.get(this.state, 'featuredPosts.error')}
-                    errorCode={_.get(this.state, 'featuredPosts.errorCode')}
-                    isLoading={_.get(this.state, 'featuredPosts.isLoading')}
+                    data={get(this.state, 'featuredPosts.data')}
+                    error={get(this.state, 'featuredPosts.error')}
+                    errorCode={get(this.state, 'featuredPosts.errorCode')}
+                    isLoading={get(this.state, 'featuredPosts.isLoading')}
                 />
                 <BlogPostList
-                    data={_.get(this.state, 'blogPosts.data')}
-                    error={_.get(this.state, 'blogPosts.error')}
-                    errorCode={_.get(this.state, 'blogPosts.errorCode')}
-                    isLoading={_.get(this.state, 'blogPosts.isLoading')}
+                    data={get(this.state, 'blogPosts.data')}
+                    error={get(this.state, 'blogPosts.error')}
+                    errorCode={get(this.state, 'blogPosts.errorCode')}
+                    isLoading={get(this.state, 'blogPosts.isLoading')}
                 />
             </main>
         );

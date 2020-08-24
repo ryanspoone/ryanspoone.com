@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import _ from 'lodash';
+import get from 'lodash/get';
 
 import '../styles/Projects.css';
 import GitHubStats from './GitHubStats.js';
@@ -13,17 +13,17 @@ export default function Projects({ githubFeatured, githubUser } = {}) {
             <h3 className="heading">What I&apos;ve Been Up To</h3>
             <h4>Some Stats From GitHub</h4>
             <GitHubStats
-                data={_.get(githubUser, 'data')}
-                error={_.get(githubUser, 'error')}
-                errorCode={_.get(githubUser, 'errorCode')}
-                isLoading={_.get(githubUser, 'isLoading')}
+                data={get(githubUser, 'data')}
+                error={get(githubUser, 'error')}
+                errorCode={get(githubUser, 'errorCode')}
+                isLoading={get(githubUser, 'isLoading')}
             />
             <h4>Some Things I&apos;ve Built</h4>
             <FeaturedProjects
-                data={_.get(githubFeatured, 'data')}
-                error={_.get(githubFeatured, 'error')}
-                errorCode={_.get(githubFeatured, 'errorCode')}
-                isLoading={_.get(githubFeatured, 'isLoading')}
+                data={get(githubFeatured, 'data')}
+                error={get(githubFeatured, 'error')}
+                errorCode={get(githubFeatured, 'errorCode')}
+                isLoading={get(githubFeatured, 'isLoading')}
             />
             <Link to="/archive" className="archive-link">
                 view the archive

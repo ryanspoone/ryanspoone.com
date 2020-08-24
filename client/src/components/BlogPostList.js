@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import _ from 'lodash';
+import isEmpty from 'lodash/isEmpty';
 
 import ErrorMessage from './common/ErrorMessage.js';
 
@@ -56,7 +56,7 @@ export default function BlogPostList(props) {
             </div>
         );
     } else if (data) {
-        if (_.isEmpty(data)) {
+        if (isEmpty(data)) {
             return <span></span>;
         }
         return (

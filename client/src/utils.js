@@ -1,9 +1,11 @@
 import { useEffect, useState } from 'react';
-import _ from 'lodash';
+import throttle from 'lodash/throttle';
+import includes from 'lodash/includes';
+import startCase from 'lodash/startCase';
 
 const prettifyTitle = title => {
-    if (_.includes(title, '-')) {
-        return _.startCase(title);
+    if (includes(title, '-')) {
+        return startCase(title);
     }
     return title;
 };
@@ -23,7 +25,7 @@ const useDocumentScrollThrottled = callback => {
         callback({ previousScrollTop, currentScrollTop });
     }
 
-    const handleDocumentScrollThrottled = _.throttle(handleDocumentScroll, 250);
+    const handleDocumentScrollThrottled = throttle(handleDocumentScroll, 250);
 
     useEffect(() => {
         window.addEventListener('scroll', handleDocumentScrollThrottled);

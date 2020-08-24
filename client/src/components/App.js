@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
-import _ from 'lodash';
+import get from 'lodash/get';
+import isEmpty from 'lodash/isEmpty';
+import isString from 'lodash/isString';
 
 import '../styles/App.css';
 import Client from '../Client.js';
@@ -41,11 +43,11 @@ export default class App extends Component {
         try {
             this.getRepoStats();
         } catch (err) {
-            let error = _.get(err, 'message') || _.get(err, 'error', err);
-            if (_.isEmpty(error)) {
+            let error = get(err, 'message') || get(err, 'error', err);
+            if (isEmpty(error)) {
                 error = 'An error status was returned but no error message.';
             }
-            if (!_.isString(error)) {
+            if (!isString(error)) {
                 error = JSON.stringify(error);
             }
             console.error('Thrown error from server:', error);
@@ -64,7 +66,7 @@ export default class App extends Component {
     render() {
         return (
             <div className={`layout ${this.state.isMenuShowing ? 'blur' : ''}`}>
-                <Header toggle={this.toggleMenu} isShowing={_.get(this.state, 'isMenuShowing')} />
+                <Header toggle={this.toggleMenu} isShowing={get(this.state, 'isMenuShowing')} />
                 <SocialSidebar />
                 <EmailSidebar />
 
@@ -77,9 +79,9 @@ export default class App extends Component {
                 </Switch>
 
                 <Footer
-                    data={_.get(this.state, 'githubRepo.data')}
-                    error={_.get(this.state, 'githubRepo.error')}
-                    isLoading={_.get(this.state, 'githubRepo.isLoading')}
+                    data={get(this.state, 'githubRepo.data')}
+                    error={get(this.state, 'githubRepo.error')}
+                    isLoading={get(this.state, 'githubRepo.isLoading')}
                 />
             </div>
         );

@@ -13,4 +13,4 @@ render(
 );
 
 // Change to .unregister() or .register() to toggle PWA.
-serviceWorker.register();
+serviceWorker.unregister();

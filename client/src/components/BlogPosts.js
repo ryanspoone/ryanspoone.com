@@ -90,7 +90,7 @@ export default class BlogPosts extends Component {
         return (
             <main className="blog-posts">
                 <header>
-                    <h1 className="big-title">Blog Posts</h1>
+                    <h1>Spoon[e]fed Information</h1>
                 </header>
                 <FeaturedBlogPosts
                     data={get(this.state, 'featuredPosts.data')}

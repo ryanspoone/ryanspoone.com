@@ -12,5 +12,5 @@ render(
     document.getElementById('root')
 );
 
-// Change to .register() to enable it.
-serviceWorker.unregister();
+// Change to .unregister() or .register() to toggle PWA.
+serviceWorker.register();

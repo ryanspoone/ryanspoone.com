@@ -3,7 +3,7 @@ export default {
         {
             title: 'Senior Software Engineer',
             summary:
-                'Scrum Technical Lead<br /><ul><li>Technical leader for various parts of our product such as integrations, actions, goals, internationalization, & data-pipeline.</li></li>Implemented new operations that allowed us to reduce the number of external API calls by half by using data that already was in the system.</li></li>Launched custom object types allowing customers to sync one-off tables.</li></li>Created a calendar service that allowed customers and our system to accurately bucket and display data relevant for their custom calendar schedule.</li></li>Developed an integration framework that allowed our system to navigate lossless data on deploys.<li><ul>',
+                'Scrum Technical Lead<br /><ul><li>Technical leader for various parts of our product such as integrations, actions, goals, internationalization, & data-pipeline.</li><li>Implemented new operations that allowed us to reduce the number of external API calls by half by using data that already was in the system.</li><li>Launched custom object types allowing customers to sync one-off tables.</li><li>Created a calendar service that allowed customers and our system to accurately bucket and display data relevant for their custom calendar schedule.</li><li>Developed an integration framework that allowed our system to navigate lossless data on deploys.</li></ul>',
             'start-date': '2019',
             'end-date': null,
             'is-current': true,

@@ -1,11 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import isEmpty from 'lodash/isEmpty';
+import PropTypes from 'prop-types';
 
 import '../styles/FeaturedBlogPosts.css';
 import ErrorMessage from './common/ErrorMessage.js';
 
-export default function BlogPostList(props) {
+const FeaturedBlogPosts = props => {
     const { error, errorCode, data, isLoading } = props;
     if (isLoading) {
         return (
@@ -57,4 +58,11 @@ export default function BlogPostList(props) {
     } else {
         return <ErrorMessage errorCode={errorCode} error={error} />;
     }
-}
+};
+FeaturedBlogPosts.propTypes = {
+    errorCode: PropTypes.number,
+    error: PropTypes.string,
+    data: PropTypes.array,
+    isLoading: PropTypes.bool
+};
+export default FeaturedBlogPosts;

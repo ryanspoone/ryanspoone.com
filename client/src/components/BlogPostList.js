@@ -29,7 +29,7 @@ PostLink.propTypes = {
     title: PropTypes.string
 };
 
-export default function BlogPostList(props) {
+const BlogPostList = props => {
     const { error, errorCode, data, isLoading } = props;
     if (isLoading) {
         return (
@@ -94,4 +94,11 @@ export default function BlogPostList(props) {
     } else {
         return <ErrorMessage errorCode={errorCode} error={error} />;
     }
-}
+};
+BlogPostList.propTypes = {
+    errorCode: PropTypes.number,
+    error: PropTypes.string,
+    data: PropTypes.array,
+    isLoading: PropTypes.bool
+};
+export default BlogPostList;

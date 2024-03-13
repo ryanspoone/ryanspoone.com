@@ -53,7 +53,7 @@ export default class Github extends Component {
         } else if (data) {
             return (
                 <section id="experience" className="experience">
-                    <h3 className="heading">Where I&apos;ve Worked</h3>
+                    <h3 className="heading">Where I&apos;ve Led and Achieved</h3>
                     <div className="jobs">
                         <ul role="tablist" aria-label="Job tabs" className="job-tabs">
                             {data.map((position, index) => {
@@ -74,7 +74,9 @@ export default class Github extends Component {
                                                     this.getSelectedIndex(index);
                                                 }}
                                             >
-                                                <span>{position.company}</span>
+                                                <span>
+                                                    {position.title} @ {position.company}
+                                                </span>
                                             </button>
                                         </li>
                                     );
@@ -93,7 +95,9 @@ export default class Github extends Component {
                                                 this.getSelectedIndex(index);
                                             }}
                                         >
-                                            <span>{position.company}</span>
+                                            <span>
+                                                {position.title} @ {position.company}
+                                            </span>
                                         </button>
                                     </li>
                                 );

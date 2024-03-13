@@ -17,8 +17,8 @@ export default function Intro() {
                 </p>
             </div>
             <div>
-                <a className="btn btn-primary" href="mailto:me@ryanspoone.com">
-                    Get In Touch
+                <a className="btn btn-primary" href="https://managerreadme.com/readme/ryanspoone">
+                    My Manager Readme
                 </a>
             </div>
         </section>

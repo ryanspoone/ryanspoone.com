@@ -37,8 +37,6 @@
 
 .description {
     margin-top: 25px;
-    width: 50%;
-    max-width: 500px;
 }
 
 @media (max-width: 62.5em) {

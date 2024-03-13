@@ -9,24 +9,37 @@ export default function About() {
             <div className="about-flex-container">
                 <div className="about-content">
                     <div>
-                        <p>Hello! I&apos;m Ryan, a software engineer based in Austin, TX.</p>
+                        <p>Hello! I&apos;m Ryan, an engineering manager based in Austin, TX.</p>
                         <p>
-                            I am not a purist when it comes to programming languages; however, currently, I
-                            mainly work with JavaScript (Node.js). I love what I do, and adore the creative
-                            process; it is addictive and can give never ending possibilities. Although I
-                            mainly work professionally on back-end code, I do thoroughly enjoy the front-end
-                            side of things. It&apos;s ever evolving and there is always something new to
-                            learn. When not working professionally, I thoroughly enjoy getting to create and
-                            spend time on personal projects, whether thats a new project I am lifting off the
-                            ground or helping a friend with their work.
+                            Leadership in technology is not just about understanding the latest programming
+                            languages or frameworks; it&apos;s about fostering a culture of innovation,
+                            collaboration, and continuous improvement. My background as a software engineer,
+                            with a strong inclination towards JavaScript (Node.js), has equipped me with the
+                            technical foundation necessary to guide teams effectively. I thrive on the
+                            challenge of turning complex problems into elegant solutions, and I am deeply
+                            committed to nurturing the growth and development of my team members.
                         </p>
-                        <p>Here are a few technologies I&apos;ve been working with recently:</p>
+                        <p>
+                            In my journey from coding to leadership, I&apos;ve learned to appreciate the
+                            beauty of both the technical and human aspects of software development. Whether
+                            it&apos;s architecting scalable back-end systems or crafting intuitive user
+                            interfaces, my approach is always guided by the end goal of delivering value and
+                            excellence.
+                        </p>
+                        <p>
+                            Here are a few technologies and methodologies I&apos;ve been advocating for
+                            recently:
+                        </p>
                         <ul className="skills">
-                            <li className="skill">JavaScript (ES6+)</li>
-                            <li className="skill">HTML &amp; CSS</li>
-                            <li className="skill">React</li>
-                            <li className="skill">Node.js</li>
-                            <li className="skill">Python</li>
+                            <li className="skill">JavaScript (ES6+), HTML & CSS, React, Node.js, Python</li>
+                            <li className="skill">Agile and Scrum methodologies</li>
+                            <li className="skill">
+                                Continuous integration/continuous deployment (CI/CD) practices
+                            </li>
+                            <li className="skill">
+                                Cloud computing and scalable infrastructure with AWS/Azure
+                            </li>
+                            <li className="skill">Data-driven decision making and KPI tracking</li>
                         </ul>
                     </div>
                 </div>

@@ -51,6 +51,7 @@ export default function Contact() {
         <p className="location-info">
           Location: Remote-first (currently based abroad, open to US/global opportunities)
           <br/>
+          <br/>
           Response Time: I typically respond within 24-48 hours for legitimate inquiries
         </p>
       </div>

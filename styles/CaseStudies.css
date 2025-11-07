@@ -14,19 +14,9 @@
   color: rgb(100, 255, 218);
 }
 
-.case-study-list {
-  padding-left: 20px;
-  margin-top: 10px;
-}
-
-.case-study-list li {
-  margin-bottom: 8px;
-  font-size: 14px;
-}
-
-.case-study-learnings li {
+/* Modifier class for learning items to add italic styling */
+.case-study-learnings .bullet-list__item {
   font-style: italic;
-  margin-bottom: 20px;
 }
 
 .case-study-button {

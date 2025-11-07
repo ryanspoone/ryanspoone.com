@@ -1,0 +1,43 @@
+/**
+ * BulletList Component Styles
+ *
+ * Provides consistent list styling across the site with:
+ * - Teal arrow bullets (▹)
+ * - Proper spacing and indentation
+ * - Responsive grid layout support
+ */
+
+.bullet-list {
+  padding-left: 20px;
+  margin: 0;
+  list-style: none;
+}
+
+.bullet-list__item {
+  position: relative;
+  margin-bottom: 10px;
+  padding-left: 20px;
+}
+
+.bullet-list__item::before {
+  content: '▹';
+  position: absolute;
+  left: 0;
+  color: rgb(100, 255, 218);
+  font-style: normal;
+  font-weight: normal;
+}
+
+/* Two-column layout for desktop */
+.bullet-list--two-columns {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(240px, 1fr));
+  gap: 0px 20px;
+}
+
+/* Responsive: single column on mobile */
+@media (max-width: 48em) {
+  .bullet-list--two-columns {
+    grid-template-columns: 1fr;
+  }
+}

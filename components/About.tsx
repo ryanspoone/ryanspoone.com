@@ -1,4 +1,5 @@
 import '@/styles/About.css';
+import BulletList from './ui/BulletList';
 
 export default function About() {
   return (
@@ -32,24 +33,15 @@ export default function About() {
               I joined Olono, a pre-Series A startup, as their first dedicated backend engineer. Within 18 months, we were acquired by InsightSquared. Two years later, InsightSquared was acquired by Mediafly. I rode the journey from 10-person startup to 200+ person organization, progressing from Software Engineer to Director of Engineering.
             </p>
             <p>This trajectory taught me how to build systems and teams that survive rapid growth:</p>
-            <ul className="career-list">
-              <li>
-                <span>▹</span>
-                As a Software Engineer, I built the integration framework that connected our platform to Salesforce, Zendesk, Jira, and other services—contributing to 300% customer growth
-              </li>
-              <li>
-                <span>▹</span>
-                As a Senior/Principal Engineer, I architected ETL systems that increased data processing efficiency by 60%, enabling us to scale to 500% more customers without proportional infrastructure costs
-              </li>
-              <li>
-                <span>▹</span>
-                As an Engineering Manager, I built Mediafly&apos;s first nearshore team and created onboarding programs that reduced ramp-up time by 50%
-              </li>
-              <li>
-                <span>▹</span>
-                As a Director of Engineering, I led teams of 10 engineers delivering strategic projects contributing $4M ARR while implementing Agile frameworks that improved delivery predictability by 90%
-              </li>
-            </ul>
+            <BulletList
+              items={[
+                'As a Software Engineer, I built the integration framework that connected our platform to Salesforce, Zendesk, Jira, and other services—contributing to 300% customer growth',
+                'As a Senior/Principal Engineer, I architected ETL systems that increased data processing efficiency by 60%, enabling us to scale to 500% more customers without proportional infrastructure costs',
+                'As an Engineering Manager, I built Mediafly\'s first nearshore team and created onboarding programs that reduced ramp-up time by 50%',
+                'As a Director of Engineering, I led teams of 10 engineers delivering strategic projects contributing $4M ARR while implementing Agile frameworks that improved delivery predictability by 90%'
+              ]}
+              ariaLabel="Career accomplishments"
+            />
             <p className="career-description">
               Key lesson: Scaling isn&apos;t just about adding more people. It&apos;s about building systems, processes, and culture that amplify everyone&apos;s impact.
             </p>
@@ -69,54 +61,43 @@ export default function About() {
             </p>
 
             <h4>What I Care About</h4>
-            <ul className="values-list">
-              <li>
-                <span>▹</span>
-                <strong>Technical Excellence with Business Impact:</strong> I believe the best engineering delivers measurable business value. Code quality matters, but what matters more is whether customers can do things they couldn&apos;t do before.
-              </li>
-              <li>
-                <span>▹</span>
-                <strong>Building Teams That Scale:</strong> The most satisfying part of engineering leadership is watching people grow. Engineers I mentored have gone on to lead teams, architect major systems, and start their own companies.
-              </li>
-              <li>
-                <span>▹</span>
-                <strong>Making Software Development More Accessible:</strong> Whether through better tools, clearer documentation, or AI assistance—I&apos;m passionate about lowering barriers to building great software.
-              </li>
-            </ul>
+            <BulletList
+              items={[
+                <><strong>Technical Excellence with Business Impact:</strong> I believe the best engineering delivers measurable business value. Code quality matters, but what matters more is whether customers can do things they couldn&apos;t do before.</>,
+                <><strong>Building Teams That Scale:</strong> The most satisfying part of engineering leadership is watching people grow. Engineers I mentored have gone on to lead teams, architect major systems, and start their own companies.</>,
+                <><strong>Making Software Development More Accessible:</strong> Whether through better tools, clearer documentation, or AI assistance—I&apos;m passionate about lowering barriers to building great software.</>
+              ]}
+              ariaLabel="Core values"
+            />
 
             <h4>Technologies & Methodologies</h4>
-            <ul className="skills">
-              <li className="skill">Python</li>
-              <li className="skill">JavaScript (Node.js)</li>
-              <li className="skill">React</li>
-              <li className="skill">Distributed Systems</li>
-              <li className="skill">ETL & Data Pipelines</li>
-              <li className="skill">AWS & Azure</li>
-              <li className="skill">Microservices Architecture</li>
-              <li className="skill">Agile & Scrum</li>
-              <li className="skill">Team Scaling</li>
-              <li className="skill">AI/ML Integration</li>
-            </ul>
+            <BulletList
+              items={[
+                'Python',
+                'JavaScript (Node.js)',
+                'React',
+                'Distributed Systems',
+                'ETL & Data Pipelines',
+                'AWS & Azure',
+                'Microservices Architecture',
+                'Agile & Scrum',
+                'Team Scaling',
+                'AI/ML Integration'
+              ]}
+              columns={2}
+              ariaLabel="Technologies and methodologies"
+            />
 
             <h4>Outside of Work</h4>
-            <ul className="career-list">
-              <li>
-                <span>▹</span>
-                Amateur Radio Operator (FCC Technician License)
-              </li>
-              <li>
-                <span>▹</span>
-                StrongLifts 5x5 (currently working toward the 200lb milestone)
-              </li>
-              <li>
-                <span>▹</span>
-                Gaming (World of Warcraft, Baldur&apos;s Gate 3, strategy games)
-              </li>
-              <li>
-                <span>▹</span>
-                Reading (sci-fi, technical deep-dives, and leadership books)
-              </li>
-            </ul>
+            <BulletList
+              items={[
+                'Amateur Radio Operator (FCC Technician License)',
+                'StrongLifts 5x5 (currently working toward the 200lb milestone)',
+                'Gaming (World of Warcraft, Baldur\'s Gate 3, strategy games)',
+                'Reading (sci-fi, technical deep-dives, and leadership books)'
+              ]}
+              ariaLabel="Personal interests"
+            />
           </div>
         </div>
       </div>

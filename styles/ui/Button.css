@@ -1,0 +1,98 @@
+/**
+ * Button Component Styles
+ *
+ * Provides consistent button styling across the site with:
+ * - Multiple variants (primary, secondary, outline)
+ * - Multiple sizes (small, medium, large)
+ * - Hover and focus states
+ * - Accessible focus indicators
+ */
+
+/* Base button styles */
+.btn {
+  display: inline-block;
+  font-weight: 400;
+  text-align: center;
+  vertical-align: middle;
+  user-select: none;
+  background-color: transparent;
+  border: 1px solid transparent;
+  text-decoration: none;
+  cursor: pointer;
+  font-family: 'SF Mono', 'Fira Code', 'Fira Mono', 'Roboto Mono', 'Lucida Console', Monaco, monospace;
+  transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
+  border-radius: 3px;
+  line-height: 1;
+}
+
+/* Primary variant - teal outline */
+.btn--primary {
+  color: rgb(100, 255, 218);
+  background-color: transparent;
+  border: 1px solid rgb(100, 255, 218);
+}
+
+.btn--primary:hover,
+.btn--primary:focus,
+.btn--primary:active {
+  background-color: rgba(100, 255, 218, 0.07);
+  color: rgb(100, 255, 218);
+}
+
+/* Secondary variant - solid background */
+.btn--secondary {
+  color: rgb(10, 25, 47);
+  background-color: rgb(100, 255, 218);
+  border: 1px solid rgb(100, 255, 218);
+}
+
+.btn--secondary:hover,
+.btn--secondary:focus,
+.btn--secondary:active {
+  background-color: rgb(80, 235, 198);
+  border-color: rgb(80, 235, 198);
+  color: rgb(10, 25, 47);
+}
+
+/* Outline variant - subtle border */
+.btn--outline {
+  color: rgb(136, 146, 176);
+  background-color: transparent;
+  border: 1px solid rgb(136, 146, 176);
+}
+
+.btn--outline:hover,
+.btn--outline:focus,
+.btn--outline:active {
+  color: rgb(100, 255, 218);
+  border-color: rgb(100, 255, 218);
+  background-color: rgba(100, 255, 218, 0.07);
+}
+
+/* Size variants */
+.btn--small {
+  font-size: 13px;
+  padding: 0.5rem 0.75rem;
+}
+
+.btn--medium {
+  font-size: 14px;
+  padding: 0.75rem 1rem;
+}
+
+.btn--large {
+  font-size: 14px;
+  padding: 1.25rem 1.75rem;
+}
+
+/* Full width option */
+.btn--full-width {
+  width: 100%;
+  display: block;
+}
+
+/* Focus styles for accessibility */
+.btn:focus-visible {
+  outline: 2px solid rgb(100, 255, 218);
+  outline-offset: 2px;
+}

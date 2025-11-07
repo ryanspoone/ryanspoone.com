@@ -4,6 +4,7 @@ import { useState } from 'react';
 import '@/styles/FeaturedProjects.css';
 import '@/styles/CaseStudies.css';
 import { CASE_STUDIES } from '@/lib/caseStudies/data';
+import BulletList from './ui/BulletList';
 
 export default function CaseStudies() {
   const [expandedStudy, setExpandedStudy] = useState<number | null>(null);
@@ -32,23 +33,11 @@ export default function CaseStudies() {
                   <p><strong className="case-study-label">Context:</strong> {study.details.context}</p>
                   <p><strong className="case-study-label">Challenge:</strong> {study.details.challenge}</p>
                   <p><strong className="case-study-label">Approach:</strong></p>
-                  <ul className="case-study-list">
-                    {study.details.approach.map((item, i) => (
-                      <li key={i}>{item}</li>
-                    ))}
-                  </ul>
+                  <BulletList items={study.details.approach} ariaLabel="Approach details" />
                   <p><strong className="case-study-label">Results:</strong></p>
-                  <ul className="case-study-list">
-                    {study.details.results.map((item, i) => (
-                      <li key={i}>{item}</li>
-                    ))}
-                  </ul>
+                  <BulletList items={study.details.results} ariaLabel="Results" />
                   <p><strong className="case-study-label">Key Learnings:</strong></p>
-                  <ul className="case-study-list case-study-learnings">
-                    {study.details.learnings.map((item, i) => (
-                      <li key={i}>{item}</li>
-                    ))}
-                  </ul>
+                  <BulletList items={study.details.learnings} ariaLabel="Key learnings" className="case-study-learnings" />
                 </div>
               )}
               <button

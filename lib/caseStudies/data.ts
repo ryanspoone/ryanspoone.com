@@ -87,7 +87,7 @@ export const CASE_STUDIES: CaseStudy[] = [
         'Open-sourced tools for x86_64 Linux systems'
       ],
       results: [
-        'Industry-wide adoption: Open-source benchmarking suite used across semiconductor industry',
+        'Company-wide adoption: Open-source benchmarking suite used across all SKU performance teams',
         '2x Intel Division Recognition Awards: For competitive analysis and web app creation',
         '90% user return rate: For CPU comparison application',
         'Company-wide impact: Became standard benchmarking owner for multiple workload types'

@@ -21,7 +21,7 @@ export default function About() {
               I started my career at Intel as a Performance Engineer in the Data Center Group, where I fell in love with systems programming and performance optimization. I spent three years building benchmarking tools, analyzing CPU performance characteristics, and developing internal applications for performance comparison.
             </p>
             <p>
-              The work taught me to think at multiple levels of abstraction—from instruction-level optimization to system architecture to user experience. I built an open-source performance testing suite that&apos;s still used across the industry today, and received two Intel Division Recognition Awards for my contributions.
+              The work taught me to think at multiple levels of abstraction—from instruction-level optimization to system architecture to user experience. I built an open-source performance testing suite that&apos;s still used across the company today, and received two Intel Division Recognition Awards for my contributions.
             </p>
             <p className="career-description">
               Key lesson: The best technical work combines deep expertise with clear communication. Engineers need tools that work, and stakeholders need to understand why it matters.

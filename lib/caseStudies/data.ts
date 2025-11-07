@@ -73,11 +73,11 @@ export const CASE_STUDIES: CaseStudy[] = [
   },
   {
     title: 'Open-Source Performance Benchmarking at Intel',
-    description: 'Built comprehensive benchmarking suite for x86_64 processors, adopted industry-wide. Created internal CPU comparison tool with 90% user return rate.',
+    description: 'Built comprehensive benchmarking suite for x86_64 processors, adopted company-wide. Created internal CPU comparison tool with 90% user return rate.',
     tech: ['Python', 'Bash', 'C', 'C++', 'React', 'Redux', 'Node.js', 'Express'],
     details: {
       context: 'Intel Corporation, Data Center Group. As Performance Engineer (2014-2017), I was responsible for company-wide performance benchmarks for x86_64 processors.',
-      challenge: 'Intel needed comprehensive performance testing tools for new processor architectures. The tools had to be repeatable and consistent across different systems, cover multiple performance dimensions (cache, memory, compute, database, etc.), easy to use for engineers who weren\'t performance specialists, and open-source to enable industry-wide adoption.',
+      challenge: 'Intel needed comprehensive performance testing tools for new processor architectures. The tools had to be repeatable and consistent across different systems, cover multiple performance dimensions (cache, memory, compute, database, etc.), easy to use for engineers who weren\'t performance specialists, and open-source to enable company-wide adoption.',
       approach: [
         'Developed comprehensive benchmarking harness using Object-Oriented Python and Bash',
         'Created automated test suites covering cache latency (LMbench), memory bandwidth (MLC, STREAM), cryptography throughput (OpenSSL), compression performance (zlib), floating-point operations (LINPACK), compilation speed (Linux kernel build), database throughput (Cassandra, MySQL), and container performance (Docker)',

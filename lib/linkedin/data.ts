@@ -86,9 +86,9 @@ const linkedinData = {
             title: 'Performance Engineer',
             summary: `
                 <ul>
-                    <li><b>Built Open-Source Benchmarking Suite:</b> Developed comprehensive performance testing tools for x86_64 Linux systems, adopted across the semiconductor industry.</li>
+                    <li><b>Built Open-Source Benchmarking Suite:</b> Developed comprehensive performance testing tools for x86_64 Linux systems, adopted across the company.</li>
                     <li><b>Created CPU Comparison Web App:</b> Engineered React/Redux application with 90% user return rate for internal CPU performance comparison.</li>
-                    <li><b>Industry Recognition:</b> Received two Intel Division Recognition Awards for competitive analysis and web application creation.</li>
+                    <li><b>Company Recognition:</b> Received two Intel Division Recognition Awards for competitive analysis and web application creation.</li>
                     <li><b>Became Company-Wide Standard:</b> Tools became standard benchmarking suite for multiple workload types across Intel.</li>
                 </ul>
             `,

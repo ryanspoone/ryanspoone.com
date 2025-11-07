@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useRef } from 'react';
 import throttle from 'lodash/throttle';
 
 interface ScrollCallbackData {
@@ -9,25 +9,26 @@ interface ScrollCallbackData {
 }
 
 export const useDocumentScrollThrottled = (callback: (data: ScrollCallbackData) => void) => {
-  const [, setScrollPosition] = useState(0);
-  let previousScrollTop = 0;
-
-  function handleDocumentScroll() {
-    const { scrollTop: currentScrollTop } = document.documentElement || document.body;
-
-    setScrollPosition(previousPosition => {
-      previousScrollTop = previousPosition;
-      return currentScrollTop;
-    });
-
-    callback({ previousScrollTop, currentScrollTop });
-  }
-
-  const handleDocumentScrollThrottled = throttle(handleDocumentScroll, 250);
+  const previousScrollTopRef = useRef(0);
+  const throttledHandlerRef = useRef<ReturnType<typeof throttle> | null>(null);
 
   useEffect(() => {
-    window.addEventListener('scroll', handleDocumentScrollThrottled);
+    const handleDocumentScroll = () => {
+      const { scrollTop: currentScrollTop } = document.documentElement || document.body;
+      const previousScrollTop = previousScrollTopRef.current;
 
-    return () => window.removeEventListener('scroll', handleDocumentScrollThrottled);
-  }, [handleDocumentScrollThrottled]);
+      previousScrollTopRef.current = currentScrollTop;
+      callback({ previousScrollTop, currentScrollTop });
+    };
+
+    throttledHandlerRef.current = throttle(handleDocumentScroll, 250);
+    window.addEventListener('scroll', throttledHandlerRef.current);
+
+    return () => {
+      if (throttledHandlerRef.current) {
+        window.removeEventListener('scroll', throttledHandlerRef.current);
+        throttledHandlerRef.current.cancel();
+      }
+    };
+  }, [callback]);
 };

@@ -23,12 +23,13 @@ interface ExperienceProps {
 
 export default function Experience({ error, errorCode, data, isLoading }: ExperienceProps) {
   const [selectedPosition, setSelectedPosition] = useState(0);
-  const [isMobile, setIsMobile] = useState(false);
+  const [isMobile, setIsMobile] = useState(() => {
+    if (typeof window === 'undefined') return false;
+    return window.matchMedia('(max-width: 37.5em)').matches;
+  });
 
   useEffect(() => {
     const mediaQuery = window.matchMedia('(max-width: 37.5em)');
-    setIsMobile(mediaQuery.matches);
-
     const handler = (e: MediaQueryListEvent) => setIsMobile(e.matches);
     mediaQuery.addEventListener('change', handler);
 

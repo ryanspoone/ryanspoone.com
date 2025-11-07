@@ -1,4 +1,4 @@
-export default {
+const linkedinData = {
     'three-current-positions': [
         {
             title: 'Founder',
@@ -100,3 +100,5 @@ export default {
         }
     ]
 };
+
+export default linkedinData;

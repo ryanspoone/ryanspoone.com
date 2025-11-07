@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { useDocumentScrollThrottled } from '@/lib/hooks';
 import '@/styles/Header.css';
 
@@ -40,7 +41,7 @@ export default function Header({ isShowing, toggle }: HeaderProps) {
     <header className={`head ${shadowStyle} ${hiddenStyle}`}>
       <nav>
         <Link className="brand" href="/" onClick={topOfPage}>
-          <img src="/images/logo.png" alt="Ryan Spoone Logo" />
+          <Image src="/images/logo.png" alt="Ryan Spoone Logo" width={40} height={40} />
         </Link>
         <div className="hamburger" onClick={toggle}>
           <div className="hamburger-box">
@@ -50,29 +51,29 @@ export default function Header({ isShowing, toggle }: HeaderProps) {
         <div className="sections">
           <ol className="sections-list">
             <li className="sections-item">
-              <a className="" href="/#about">
+              <Link className="" href="/#about">
                 About
-              </a>
+              </Link>
             </li>
             <li className="sections-item">
-              <a className="" href="/#experience">
+              <Link className="" href="/#experience">
                 Experience
-              </a>
+              </Link>
             </li>
             <li className="sections-item">
-              <a className="" href="/#projects">
+              <Link className="" href="/#projects">
                 Projects
-              </a>
+              </Link>
             </li>
             <li className="sections-item">
-              <a className="" href="/#contact">
+              <Link className="" href="/#contact">
                 Contact
-              </a>
+              </Link>
             </li>
           </ol>
           <div>
-            <Link className="btn btn-primary" href="/blog">
-              Blog
+            <Link className="btn btn-primary" href="/archive">
+              Archive
             </Link>
           </div>
         </div>
@@ -86,29 +87,29 @@ export default function Header({ isShowing, toggle }: HeaderProps) {
           <nav className="menu-nav">
             <ol className="menu-nav-list">
               <li className="menu-nav-item">
-                <a className="menu-nav-link" href="/#about" onClick={toggle}>
+                <Link className="menu-nav-link" href="/#about" onClick={toggle}>
                   About
-                </a>
+                </Link>
               </li>
               <li className="menu-nav-item">
-                <a className="menu-nav-link" href="/#experience" onClick={toggle}>
+                <Link className="menu-nav-link" href="/#experience" onClick={toggle}>
                   Experience
-                </a>
+                </Link>
               </li>
               <li className="menu-nav-item">
-                <a className="menu-nav-link" href="/#projects" onClick={toggle}>
+                <Link className="menu-nav-link" href="/#projects" onClick={toggle}>
                   Projects
-                </a>
+                </Link>
               </li>
               <li className="menu-nav-item">
-                <a className="menu-nav-link" href="/#contact" onClick={toggle}>
+                <Link className="menu-nav-link" href="/#contact" onClick={toggle}>
                   Contact
-                </a>
+                </Link>
               </li>
             </ol>
-            <a className="menu-btn" href="/blog" onClick={toggle}>
-              Blog
-            </a>
+            <Link className="menu-btn" href="/archive" onClick={toggle}>
+              Archive
+            </Link>
           </nav>
         </aside>
       </div>

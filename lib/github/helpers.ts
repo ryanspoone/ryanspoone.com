@@ -35,7 +35,46 @@ export interface UserStats {
   totalForks: number;
 }
 
-const simplifyRepo = (repo: any): Repository => ({
+// GraphQL response types
+interface GitHubTopic {
+  node: {
+    topic: {
+      name: string;
+    };
+  };
+}
+
+interface GitHubRepo {
+  name: string;
+  url: string;
+  isTemplate: boolean;
+  shortDescriptionHTML: string;
+  primaryLanguage?: {
+    name: string;
+  };
+  forkCount: number;
+  stargazers?: {
+    totalCount: number;
+  };
+  updatedAt: string;
+  createdAt: string;
+  issues?: {
+    totalCount: number;
+  };
+  pullRequests?: {
+    totalCount: number;
+  };
+  repositoryTopics?: {
+    edges?: GitHubTopic[];
+  };
+  homepageUrl: string | null;
+}
+
+interface GitHubEdge<T> {
+  node: T;
+}
+
+const simplifyRepo = (repo: GitHubRepo): Repository => ({
   name: repo.name,
   url: repo.url,
   isTemplate: repo.isTemplate,
@@ -47,14 +86,14 @@ const simplifyRepo = (repo: any): Repository => ({
   createdAt: repo.createdAt,
   issueCount: repo.issues?.totalCount || 0,
   pullRequestCount: repo.pullRequests?.totalCount || 0,
-  repositoryTopics: repo.repositoryTopics?.edges?.map((topic: any) => topic.node.topic.name) || [],
+  repositoryTopics: repo.repositoryTopics?.edges?.map((topic: GitHubTopic) => topic.node.topic.name) || [],
   homepageUrl: repo.homepageUrl
 });
 
 export async function getFeatured(): Promise<Repository[]> {
   const response = await githubGraphQL(featuredQuery);
   const featuredRepos = response.data?.user?.pinnedItems?.edges || [];
-  return featuredRepos.map((edge: any) => simplifyRepo(edge.node));
+  return featuredRepos.map((edge: GitHubEdge<GitHubRepo>) => simplifyRepo(edge.node));
 }
 
 export async function getUserStats(): Promise<UserStats> {
@@ -66,8 +105,8 @@ export async function getUserStats(): Promise<UserStats> {
   }
 
   const repos = user.repositories?.edges || [];
-  const totalStars = repos.reduce((sum: number, edge: any) => sum + (edge.node.stargazers?.totalCount || 0), 0);
-  const totalForks = repos.reduce((sum: number, edge: any) => sum + (edge.node.forkCount || 0), 0);
+  const totalStars = repos.reduce((sum: number, edge: GitHubEdge<GitHubRepo>) => sum + (edge.node.stargazers?.totalCount || 0), 0);
+  const totalForks = repos.reduce((sum: number, edge: GitHubEdge<GitHubRepo>) => sum + (edge.node.forkCount || 0), 0);
 
   return {
     name: user.name,
@@ -91,7 +130,7 @@ export async function getUserStats(): Promise<UserStats> {
 export async function getRepositories(): Promise<Repository[]> {
   const response = await githubGraphQL(repositoriesQuery);
   const repos = response.data?.user?.repositories?.edges || [];
-  return repos.map((edge: any) => simplifyRepo(edge.node));
+  return repos.map((edge: GitHubEdge<GitHubRepo>) => simplifyRepo(edge.node));
 }
 
 export async function getRepoStats(params: { repo?: string }): Promise<Repository | null> {

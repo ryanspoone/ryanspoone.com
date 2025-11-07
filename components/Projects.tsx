@@ -2,10 +2,11 @@ import Link from 'next/link';
 import '@/styles/Projects.css';
 import CaseStudies from './CaseStudies';
 import FeaturedProjects from './FeaturedProjects';
+import { Repository } from '@/lib/github/helpers';
 
 interface ProjectsProps {
   githubFeatured?: {
-    data?: any[];
+    data?: Repository[];
     isLoading?: boolean;
     error?: string;
     errorCode?: number;

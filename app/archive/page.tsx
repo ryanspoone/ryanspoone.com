@@ -38,7 +38,7 @@ export default async function Archive() {
             </tr>
           </thead>
           <tbody>
-            {repos.map((repo: any, index: number) => (
+            {repos.map((repo: Repository, index: number) => (
               <tr key={index}>
                 <td className="year hide-on-mobile">{new Date(repo.createdAt).getFullYear()}</td>
                 <td className="title">{prettifyTitle(repo.name)}</td>

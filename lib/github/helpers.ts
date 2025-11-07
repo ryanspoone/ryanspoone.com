@@ -14,7 +14,7 @@ export interface Repository {
   issueCount: number;
   pullRequestCount: number;
   repositoryTopics: string[];
-  homepageUrl: string | null;
+  homepageUrl?: string;
 }
 
 export interface UserStats {
@@ -67,7 +67,7 @@ interface GitHubRepo {
   repositoryTopics?: {
     edges?: GitHubTopic[];
   };
-  homepageUrl: string | null;
+  homepageUrl?: string | null;
 }
 
 interface GitHubEdge<T> {
@@ -87,7 +87,7 @@ const simplifyRepo = (repo: GitHubRepo): Repository => ({
   issueCount: repo.issues?.totalCount || 0,
   pullRequestCount: repo.pullRequests?.totalCount || 0,
   repositoryTopics: repo.repositoryTopics?.edges?.map((topic: GitHubTopic) => topic.node.topic.name) || [],
-  homepageUrl: repo.homepageUrl
+  homepageUrl: repo.homepageUrl || undefined
 });
 
 export async function getFeatured(): Promise<Repository[]> {

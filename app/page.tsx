@@ -7,6 +7,9 @@ import '@/styles/Home.css';
 import getPositions from '@/lib/linkedin/getPositions';
 import { getFeatured } from '@/lib/github/helpers';
 
+// Revalidate every hour
+export const revalidate = 3600;
+
 async function getLinkedInJobs() {
   try {
     const data = getPositions();

@@ -5,6 +5,9 @@ import ExternalLink from '@/components/common/ExternalLink';
 import '@/styles/Archive.css';
 import { getRepositories, Repository } from '@/lib/github/helpers';
 
+// Revalidate every hour
+export const revalidate = 3600;
+
 export default async function Archive() {
   let repos: Repository[] = [];
   try {

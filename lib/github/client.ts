@@ -8,7 +8,7 @@ export default async function githubGraphQL(query: string) {
       Authorization: `Bearer ${process.env.GITHUB_TOKEN}`
     },
     body: JSON.stringify({ query }),
-    cache: 'no-store'
+    next: { revalidate: 3600 } // Cache for 1 hour
   });
 
   if (!response.ok) {

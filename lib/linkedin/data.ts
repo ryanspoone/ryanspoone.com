@@ -7,14 +7,14 @@ const linkedinData = {
                     <li><b>Building AI-Powered Developer Tools:</b> Founded Ouroborai to create AI-powered SaaS products that help non-technical founders build enterprise-grade applications without writing code.</li>
                     <li><b>Product Hypothesis:</b> Exploring template-first development combined with AI assistance to deliver products 3-5x faster at 70% lower cost than traditional development, without sacrificing quality.</li>
                     <li><b>Early Exploration Phase:</b> Building, testing, and learning in the 0-to-1 product development phase, applying lessons from a decade of scaling engineering teams.</li>
-                    <li><b>Remote-First Operations:</b> Operating fully remote from Southeast Asia, maintaining flexibility for future opportunities in technical leadership or continuing the founder journey.</li>
+                    <li><b>Remote-First Operations:</b> Operating fully remote, maintaining flexibility for future opportunities in technical leadership or continuing the founder journey.</li>
                 </ul>
             `,
-            'start-date': '2024',
+            'start-date': '2025',
             'end-date': 'Present',
             'is-current': true,
-            company: 'Ouroborai LLC',
-            'company-url': 'https://ouroborai.com'
+            company: 'Ouroborai',
+            'company-url': 'https://www.ourobor.ai'
         },
         {
             title: 'Director of Engineering',

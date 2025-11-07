@@ -1,7 +1,8 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
-import throttle from 'lodash/throttle';
+import { useEffect, useRef, useState } from 'react';
+import { throttle } from './utils';
+import { SCROLL } from './constants';
 
 interface ScrollCallbackData {
   previousScrollTop: number;
@@ -21,7 +22,7 @@ export const useDocumentScrollThrottled = (callback: (data: ScrollCallbackData) 
       callback({ previousScrollTop, currentScrollTop });
     };
 
-    throttledHandlerRef.current = throttle(handleDocumentScroll, 250);
+    throttledHandlerRef.current = throttle(handleDocumentScroll, SCROLL.THROTTLE_DELAY);
     window.addEventListener('scroll', throttledHandlerRef.current);
 
     return () => {
@@ -31,4 +32,30 @@ export const useDocumentScrollThrottled = (callback: (data: ScrollCallbackData) 
       }
     };
   }, [callback]);
+};
+
+export const useMediaQuery = (query: string): boolean => {
+  const [matches, setMatches] = useState(() => {
+    if (typeof window === 'undefined') return false;
+    return window.matchMedia(query).matches;
+  });
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia(query);
+    const handler = (e: MediaQueryListEvent) => setMatches(e.matches);
+    mediaQuery.addEventListener('change', handler);
+    return () => mediaQuery.removeEventListener('change', handler);
+  }, [query]);
+
+  return matches;
+};
+
+export const useTabbedContent = (initialIndex = 0) => {
+  const [selectedIndex, setSelectedIndex] = useState(initialIndex);
+
+  return {
+    selectedIndex,
+    selectIndex: setSelectedIndex,
+    isSelected: (index: number) => selectedIndex === index,
+  };
 };

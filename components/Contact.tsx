@@ -49,9 +49,9 @@ export default function Contact() {
           </li>
         </ul>
         <p className="location-info">
-          Location: Remote-first (currently based in Southeast Asia, open to US/global opportunities)
+          Location: Remote-first (currently based abroad, open to US/global opportunities)
           <br/>
-          Response Time: I typically respond within 24-48 hours
+          Response Time: I typically respond within 24-48 hours for legitimate inquiries
         </p>
       </div>
       <a className="btn btn-primary" href="mailto:me@ryanspoone.com">

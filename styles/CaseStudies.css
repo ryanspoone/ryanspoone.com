@@ -1,0 +1,47 @@
+/* Override projects grid for case studies single column layout */
+.case-studies-grid .projects-container {
+  grid-template-columns: 1fr;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.case-study-details {
+  margin-top: 20px;
+  font-size: 15px;
+}
+
+.case-study-label {
+  color: rgb(100, 255, 218);
+}
+
+.case-study-list {
+  padding-left: 20px;
+  margin-top: 10px;
+}
+
+.case-study-list li {
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.case-study-learnings li {
+  font-style: italic;
+  margin-bottom: 20px;
+}
+
+.case-study-button {
+  background: none;
+  border: 1px solid rgb(100, 255, 218);
+  color: rgb(100, 255, 218);
+  padding: 8px 16px;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 13px;
+  font-family: 'SF Mono', 'Fira Code', 'Fira Mono', 'Roboto Mono', 'Lucida Console', Monaco, monospace;
+  margin-top: 15px;
+  transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.case-study-button:hover {
+  background-color: rgba(100, 255, 218, 0.07);
+}

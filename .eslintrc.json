@@ -1,4 +1,5 @@
 {
+    "parser": "@babel/eslint-parser",
     "extends": [
         "eslint:recommended",
         "plugin:react/recommended",
@@ -53,6 +54,10 @@
         "ecmaVersion": 2018,
         "ecmaFeatures": {
             "jsx": true
+        },
+        "requireConfigFile": false,
+        "babelOptions": {
+            "presets": ["@babel/preset-react"]
         }
     },
     "settings": {
@@ -60,7 +65,7 @@
             "createClass": "createReactClass", // Regex for Component Factory to use,
             // default to "createReactClass"
             "pragma": "React", // Pragma to use, default to "React"
-            "version": "16" // React version. "detect" automatically picks the version you have installed.
+            "version": "18" // React version. "detect" automatically picks the version you have installed.
             // You can also use `16.0`, `16.3`, etc, if you want to override the detected value.
             // default to latest and warns if missing
             // It will default to "detect" in the future

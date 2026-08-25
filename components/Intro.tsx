@@ -11,7 +11,7 @@ export default function Intro() {
           I&apos;m the CTO of <a href="https://www.delivr.ai">Delivr.ai</a>, where we resolve B2B intent to real people, not accounts. I&apos;m still hands-on. Most weeks that means Rust, Go, and the data infrastructure behind a platform serving over a billion person-level intent signals a day.
         </p>
         <p>
-          Before this I spent a decade building data platforms and leading engineering teams through rapid growth and two acquisitions. The pattern held the whole way: measure first, replace what the numbers say to replace, keep the team small and sharp.
+          Before this I spent a decade building data platforms and leading engineering teams through rapid growth and two acquisitions. The pattern held the whole way: measure first, replace what the numbers say to replace, keep the team small and sharp. Notes from the build live at <a href="https://www.delivr.ai/engineering">delivr.ai/engineering</a>.
         </p>
       </div>
       <div>

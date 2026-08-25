@@ -61,7 +61,7 @@ export default function About() {
               ariaLabel="Delivr.ai systems"
             />
             <p className="career-description">
-              Key lesson: the fastest infrastructure is the infrastructure you actually measure. Every replacement above started with a query, not an opinion.
+              Key lesson: the fastest infrastructure is the infrastructure you actually measure. Every replacement above started with a query, not an opinion. I write about this work at <a href="https://www.delivr.ai/engineering">delivr.ai/engineering</a>.
             </p>
 
             <p className="career-section"><strong className="career-title">Side Project: Ouroborai</strong></p>

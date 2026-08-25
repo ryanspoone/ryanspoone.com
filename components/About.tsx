@@ -55,13 +55,13 @@ export default function About() {
               items={[
                 'A Rust data stack (DataFusion, DuckDB) that replaced Snowflake, Spark, and Airflow, processing billions of behavioral signals a day',
                 'An identity graph with hundreds of millions of person profiles',
-                'An intent API serving over 1.2 billion person-topic signals, rebuilt and atomically swapped into DynamoDB every day',
-                'An AI-assisted development process where agents implement tickets and humans hold the review bar',
+                'An intent API backed by over 1.2 billion person-topic signals, reimported into DynamoDB daily behind an atomic pointer swap',
+                'A development process where AI agents write the first pass and humans own every merge',
               ]}
               ariaLabel="Delivr.ai systems"
             />
             <p className="career-description">
-              Key lesson: the fastest infrastructure is the infrastructure you actually measure. Every replacement above started with a query, not an opinion. I write about this work at delivr.ai/engineering.
+              Key lesson: the fastest infrastructure is the infrastructure you actually measure. Every replacement above started with a query, not an opinion.
             </p>
 
             <p className="career-section"><strong className="career-title">Side Project: Ouroborai</strong></p>

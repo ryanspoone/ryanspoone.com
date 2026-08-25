@@ -7,7 +7,7 @@ const linkedinData = {
                     <li><b>Person-Level Intent Platform:</b> Delivr.ai resolves anonymous B2B research activity to real people, not just accounts. Joined as Director of Engineering, promoted to CTO in early 2026. Hands-on across Go, Rust, and Next.js on AWS.</li>
                     <li><b>Rust Data Stack:</b> Led the replacement of Snowflake, Spark, and Airflow with an internal Rust stack (DataFusion, DuckDB) processing billions of daily signals at a fraction of the cost.</li>
                     <li><b>Intent API:</b> Built the partner-facing intent API: over 1.2 billion person-topic signals, rebuilt daily into DynamoDB with an atomic pointer swap.</li>
-                    <li><b>AI-Assisted Engineering:</b> Run a development process where AI agents implement tickets and humans hold the review bar, across a multi-service production platform.</li>
+                    <li><b>AI-Assisted Engineering:</b> AI agents implement tickets, humans review and merge, across a multi-service production platform.</li>
                 </ul>
             `,
             'start-date': '2025',

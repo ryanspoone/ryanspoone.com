@@ -46,18 +46,27 @@ export default function About() {
               Key lesson: Scaling isn&apos;t just about adding more people. It&apos;s about building systems, processes, and culture that amplify everyone&apos;s impact.
             </p>
 
-            <p className="career-section"><strong className="career-title">Ouroborai (2024-Present): Building from Zero Again</strong></p>
+            <p className="career-section"><strong className="career-title">Delivr.ai (2025-Present): Person-Level Intent, Hands-On</strong></p>
             <p>
-              After years of scaling existing products, I wanted to return to the 0-to-1 phase. I founded Ouroborai to build AI-powered tools that help non-technical founders create enterprise-grade applications without writing code.
+              I joined Delivr.ai as Director of Engineering and became CTO in early 2026. Delivr is a deterministic identity resolution and person-level intent platform: instead of telling B2B teams that some company is researching a topic, we tell them who is researching it, resolved to a real person.
             </p>
-            <p>
-              The hypothesis: template-first development + AI assistance can deliver products 3-5x faster at 70% lower cost than traditional development, without sacrificing quality.
-            </p>
-            <p>
-              I&apos;m in the early exploration phase—building, testing, learning. Whether this becomes my next decade or provides lessons for my next leadership role, I&apos;m energized by the challenge of making software development more accessible.
-            </p>
+            <p>This is the most hands-on role I&apos;ve had since Intel, and the most interesting systems I&apos;ve worked on:</p>
+            <BulletList
+              items={[
+                'A Rust data stack (DataFusion, DuckDB) that replaced Snowflake, Spark, and Airflow, processing billions of behavioral signals a day',
+                'An identity graph with hundreds of millions of person profiles',
+                'An intent API serving over 1.2 billion person-topic signals, rebuilt and atomically swapped into DynamoDB every day',
+                'An AI-assisted development process where agents implement tickets and humans hold the review bar',
+              ]}
+              ariaLabel="Delivr.ai systems"
+            />
             <p className="career-description">
-              Key lesson (so far): Building alone after leading teams makes you appreciate everything a great team provides. Also, I miss mentoring engineers.
+              Key lesson: the fastest infrastructure is the infrastructure you actually measure. Every replacement above started with a query, not an opinion. I write about this work at delivr.ai/engineering.
+            </p>
+
+            <p className="career-section"><strong className="career-title">Side Project: Ouroborai</strong></p>
+            <p>
+              Ouroborai is my side project exploring AI-powered tools that help non-technical founders create enterprise-grade applications without writing code. Building it keeps me close to the 0-to-1 phase and to what AI-assisted development feels like from the founder&apos;s seat.
             </p>
 
             <h4>What I Care About</h4>
@@ -73,16 +82,16 @@ export default function About() {
             <h4>Technologies & Methodologies</h4>
             <BulletList
               items={[
+                'Rust & Go',
+                'TypeScript (Node.js, React, Next.js)',
                 'Python',
-                'JavaScript (Node.js)',
-                'React',
                 'Distributed Systems',
-                'ETL & Data Pipelines',
-                'AWS & Azure',
+                'ETL & Data Pipelines (DataFusion, DuckDB)',
+                'AWS (EKS, DynamoDB, S3)',
+                'Identity Resolution & Intent Data',
                 'Microservices Architecture',
-                'Agile & Scrum',
                 'Team Scaling',
-                'AI/ML Integration'
+                'AI-Assisted Engineering'
               ]}
               columns={2}
               ariaLabel="Technologies and methodologies"

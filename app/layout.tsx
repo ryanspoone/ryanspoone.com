@@ -4,8 +4,8 @@ import "@/styles/App.css";
 import ClientLayout from "@/components/ClientLayout";
 
 export const metadata: Metadata = {
-  title: "Ryan Spoone - Director of Engineering & Founder",
-  description: "Director of Engineering turned Founder, specializing in scaling engineering teams, distributed systems, and data engineering. Currently building AI-powered developer tools at Ouroborai.",
+  title: "Ryan Spoone - CTO at Delivr.ai",
+  description: "CTO at Delivr.ai, building deterministic identity resolution and person-level intent infrastructure. Hands-on with Rust, Go, TypeScript, and large-scale data engineering.",
   icons: {
     icon: [
       { url: '/images/logo.png' },

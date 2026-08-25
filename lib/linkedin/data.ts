@@ -1,13 +1,27 @@
 const linkedinData = {
     'three-current-positions': [
         {
-            title: 'Founder',
+            title: 'Chief Technology Officer',
             summary: `
                 <ul>
-                    <li><b>Building AI-Powered Developer Tools:</b> Founded Ouroborai to create AI-powered SaaS products that help non-technical founders build enterprise-grade applications without writing code.</li>
-                    <li><b>Product Hypothesis:</b> Exploring template-first development combined with AI assistance to deliver products 3-5x faster at 70% lower cost than traditional development, without sacrificing quality.</li>
-                    <li><b>Early Exploration Phase:</b> Building, testing, and learning in the 0-to-1 product development phase, applying lessons from a decade of scaling engineering teams.</li>
-                    <li><b>Remote-First Operations:</b> Operating fully remote, maintaining flexibility for future opportunities in technical leadership or continuing the founder journey.</li>
+                    <li><b>Person-Level Intent Platform:</b> Delivr.ai resolves anonymous B2B research activity to real people, not just accounts. Joined as Director of Engineering, promoted to CTO in early 2026. Hands-on across Go, Rust, and Next.js on AWS.</li>
+                    <li><b>Rust Data Stack:</b> Led the replacement of Snowflake, Spark, and Airflow with an internal Rust stack (DataFusion, DuckDB) processing billions of daily signals at a fraction of the cost.</li>
+                    <li><b>Intent API:</b> Built the partner-facing intent API: over 1.2 billion person-topic signals, rebuilt daily into DynamoDB with an atomic pointer swap.</li>
+                    <li><b>AI-Assisted Engineering:</b> Run a development process where AI agents implement tickets and humans hold the review bar, across a multi-service production platform.</li>
+                </ul>
+            `,
+            'start-date': '2025',
+            'end-date': 'Present',
+            'is-current': true,
+            company: 'Delivr.ai',
+            'company-url': 'https://www.delivr.ai'
+        },
+        {
+            title: 'Founder (Side Project)',
+            summary: `
+                <ul>
+                    <li><b>AI-Powered Developer Tools:</b> Ouroborai is a side project creating AI-powered SaaS products that help non-technical founders build enterprise-grade applications without writing code.</li>
+                    <li><b>0-to-1 Practice:</b> Keeps me close to early-stage product development and to what AI-assisted building feels like from the founder's seat.</li>
                 </ul>
             `,
             'start-date': '2025',

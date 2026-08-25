@@ -5,13 +5,13 @@ export default function Intro() {
     <section id="intro" className="intro">
       <h1 className="overline">Hi, my name is</h1>
       <h2 className="title">Ryan Spoone.</h2>
-      <h3 className="subtitle">Building Scalable Systems & High-Performing Teams</h3>
+      <h3 className="subtitle">CTO at Delivr.ai. Deterministic Identity & Person-Level Intent.</h3>
       <div className="description">
         <p>
-          I&apos;m a Director of Engineering turned Founder, currently based abroad and working remotely. Over the past decade, I&apos;ve scaled engineering teams from 5 to 60+ engineers, architected data platforms processing billions of data points, and delivered products contributing $4M+ in ARR. Currently founding Ouroborai, building AI-powered tools for developers.
+          I&apos;m the CTO of <a href="https://www.delivr.ai">Delivr.ai</a>, where we resolve B2B intent to real people, not accounts. I&apos;m still hands-on: Rust, Go, TypeScript, and the data infrastructure underneath a platform that serves over a billion person-level intent signals a day.
         </p>
         <p>
-          I specialize in building and scaling engineering teams that deliver high-impact products, combining deep technical expertise in distributed systems, data engineering, and full-stack development with proven leadership in team building, process optimization, and strategic execution.
+          Over the past decade I&apos;ve built data platforms processing billions of data points, replaced managed warehouses with purpose-built systems, and led engineering teams through rapid growth and acquisitions. Notes from building Delivr live at <a href="https://www.delivr.ai/engineering">delivr.ai/engineering</a>.
         </p>
       </div>
       <div>
